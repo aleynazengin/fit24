@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.d("Maın", "Hello");
+        Log.d("Maın", "Merhaba");
     }
 }
