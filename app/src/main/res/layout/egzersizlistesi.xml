@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="350dp"
+            android:layout_height="162dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/saglikli" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="EGZERSİZ LİSTESİ"
+            android:textColor="@color/siyah"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                app:srcCompat="@drawable/snma" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                style="@android:style/Widget.Material.ImageButton"
+                android:layout_width="76dp"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/snma" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diyet Listesi"
+                android:textColor="#009688"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Egzersiz Listesi"
+                android:textColor="#009688"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:text="İdeal Kilo Hesabı"
+                android:textColor="#009688"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
