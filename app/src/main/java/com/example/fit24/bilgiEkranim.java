@@ -17,10 +17,10 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class cinsiyetEkran extends Fragment {
-    Button btngec,btndevam;
+public class bilgiEkranim extends Fragment {
+    Button btndevamet;
 
-    public cinsiyetEkran() {
+    public bilgiEkranim() {
         // Required empty public constructor
     }
 
@@ -29,9 +29,8 @@ public class cinsiyetEkran extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_cinsiyet_ekran, container, false);
-        btngec=view.findViewById(R.id.buttongec);
-        btndevam=view.findViewById(R.id.buttondevam);
+        View view = inflater.inflate(R.layout.fragment_bilgi_ekranim, container, false);
+        btndevamet= view.findViewById(R.id.buttondevamet);
         return view;
     }
 
@@ -39,16 +38,10 @@ public class cinsiyetEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final NavController navController = Navigation.findNavController(view);
-        btngec.setOnClickListener(new View.OnClickListener() {
+        btndevamet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_cinsiyetEkran_to_hosgeldinEkrani);
-            }
-        });
-        btndevam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_cinsiyetEkran_to_bilgiEkranim);
+                navController.navigate(R.id.action_girisEkran_to_hosgeldinEkrani);
             }
         });
     }
