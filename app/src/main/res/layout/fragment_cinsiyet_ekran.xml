@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="16dp"
             android:text="Cinsiyet"
             android:textColor="@color/siyah"
             android:textSize="25dp" />
@@ -55,7 +55,7 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:max="100"
             android:progress="25"
             android:progressTint="#9C27B0" />

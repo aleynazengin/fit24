@@ -50,25 +50,16 @@
             app:destination="@id/cinsiyetEkran" />
     </fragment>
     <fragment
-        android:id="@+id/bilgiEkran"
-        android:name="com.example.fit24.bilgiEkran"
-        android:label="fragment_bilgi_ekran"
-        tools:layout="@layout/fragment_bilgi_ekran" >
-        <action
-            android:id="@+id/action_bilgiEkran_to_spordereceEkran"
-            app:destination="@id/spordereceEkran" />
-    </fragment>
-    <fragment
         android:id="@+id/cinsiyetEkran"
         android:name="com.example.fit24.cinsiyetEkran"
         android:label="fragment_cinsiyet_ekran"
         tools:layout="@layout/fragment_cinsiyet_ekran" >
         <action
-            android:id="@+id/action_cinsiyetEkran_to_bilgiEkran"
-            app:destination="@id/bilgiEkran" />
-        <action
             android:id="@+id/action_cinsiyetEkran_to_hosgeldinEkrani"
             app:destination="@id/hosgeldinEkrani" />
+        <action
+            android:id="@+id/action_cinsiyetEkran_to_bilgiEkranim"
+            app:destination="@id/bilgiEkranim" />
     </fragment>
     <fragment
         android:id="@+id/egzersizListe"
@@ -117,5 +108,14 @@
         <action
             android:id="@+id/action_spordereceEkran_to_hedefEkran"
             app:destination="@id/hedefEkran" />
+    </fragment>
+    <fragment
+        android:id="@+id/bilgiEkranim"
+        android:name="com.example.fit24.bilgiEkranim"
+        android:label="fragment_bilgi_ekranim"
+        tools:layout="@layout/fragment_bilgi_ekranim" >
+        <action
+            android:id="@+id/action_bilgiEkranim_to_spordereceEkran"
+            app:destination="@id/spordereceEkran" />
     </fragment>
 </navigation>
