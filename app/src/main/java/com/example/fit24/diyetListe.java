@@ -17,10 +17,10 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class egzersizListe extends Fragment {
+public class diyetListe extends Fragment {
     Button egzersizegit,idealsayfasinagit,diyetegit;
 
-    public egzersizListe() {
+    public diyetListe() {
         // Required empty public constructor
     }
 
@@ -29,10 +29,10 @@ public class egzersizListe extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_egzersiz_liste, container, false);
-        egzersizegit=view.findViewById(R.id.buttonegzersiz4);
-        idealsayfasinagit=view.findViewById(R.id.buttonideal4);
-        diyetegit=view.findViewById(R.id.buttondiyet4);
+        View view= inflater.inflate(R.layout.fragment_diyet_liste, container, false);
+        egzersizegit=view.findViewById(R.id.buttonegzersiz3);
+        idealsayfasinagit=view.findViewById(R.id.buttonideal3);
+        diyetegit=view.findViewById(R.id.buttondiyet3);
         return view;
     }
 
@@ -43,19 +43,19 @@ public class egzersizListe extends Fragment {
         egzersizegit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_egzersizListe_self);
+                navController.navigate(R.id.action_diyetListe_to_egzersizListe);
             }
         });
         idealsayfasinagit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_egzersizListe_to_idealkiloEkran);
+                navController.navigate(R.id.action_diyetListe_to_idealkiloEkran);
             }
         });
         diyetegit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_egzersizListe_to_diyetListe);
+                navController.navigate(R.id.action_diyetListe_self);
             }
         });
     }

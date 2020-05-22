@@ -65,7 +65,17 @@
         android:id="@+id/egzersizListe"
         android:name="com.example.fit24.egzersizListe"
         android:label="fragment_egzersiz_liste"
-        tools:layout="@layout/fragment_egzersiz_liste" />
+        tools:layout="@layout/fragment_egzersiz_liste" >
+        <action
+            android:id="@+id/action_egzersizListe_self"
+            app:destination="@id/egzersizListe" />
+        <action
+            android:id="@+id/action_egzersizListe_to_idealkiloEkran"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_egzersizListe_to_diyetListe"
+            app:destination="@id/diyetListe" />
+    </fragment>
     <fragment
         android:id="@+id/hedefEkran"
         android:name="com.example.fit24.hedefEkran"
@@ -87,14 +97,24 @@
             android:id="@+id/action_hosgeldinEkrani_to_idealkiloEkran"
             app:destination="@id/idealkiloEkran" />
         <action
-            android:id="@+id/action_hosgeldinEkrani_to_kalorilisteEkran"
-            app:destination="@id/kalorilisteEkran" />
+            android:id="@+id/action_hosgeldinEkrani_to_diyetListe"
+            app:destination="@id/diyetListe" />
     </fragment>
     <fragment
         android:id="@+id/idealkiloEkran"
         android:name="com.example.fit24.idealkiloEkran"
         android:label="fragment_idealkilo_ekran"
-        tools:layout="@layout/fragment_idealkilo_ekran" />
+        tools:layout="@layout/fragment_idealkilo_ekran" >
+        <action
+            android:id="@+id/action_idealkiloEkran_to_egzersizListe"
+            app:destination="@id/egzersizListe" />
+        <action
+            android:id="@+id/action_idealkiloEkran_self"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_idealkiloEkran_to_diyetListe"
+            app:destination="@id/diyetListe" />
+    </fragment>
     <fragment
         android:id="@+id/kalorilisteEkran"
         android:name="com.example.fit24.kalorilisteEkran"
@@ -117,5 +137,20 @@
         <action
             android:id="@+id/action_bilgiEkranim_to_spordereceEkran"
             app:destination="@id/spordereceEkran" />
+    </fragment>
+    <fragment
+        android:id="@+id/diyetListe"
+        android:name="com.example.fit24.diyetListe"
+        android:label="fragment_diyet_liste"
+        tools:layout="@layout/fragment_diyet_liste" >
+        <action
+            android:id="@+id/action_diyetListe_self"
+            app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_diyetListe_to_idealkiloEkran"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_diyetListe_to_egzersizListe"
+            app:destination="@id/egzersizListe" />
     </fragment>
 </navigation>
