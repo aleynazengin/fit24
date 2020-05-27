@@ -56,7 +56,9 @@ public class hosgeldinEkrani extends Fragment {
         diyetegit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_hosgeldinEkrani_to_diyetListe);
+                navController.navigate(R.id.action_hosgeldinEkrani_to_kalorilisteEkran);
+                //navController.navigate(R.id.action_hosgeldinEkrani_to_diyetListe);
+                // kaloriyi görmek için buna link verdim normalde üstteki çalışacak
             }
         });
     }
