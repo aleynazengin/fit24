@@ -12,13 +12,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashekrani);
-        getDatabase();
-
-    }
-    public void getDatabase(){
         AppDatabase database = ((FitApplication)getApplication()).getAppDatabase();
 
         final UserDao userDao = database.userDao();
-
     }
+
 }

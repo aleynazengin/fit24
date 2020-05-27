@@ -48,4 +48,5 @@ dependencies {
 
     // Testing Navigation
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }

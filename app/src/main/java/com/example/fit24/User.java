@@ -27,7 +27,7 @@ public class User {
     @NonNull
     public String Name;
 
-    @ColumnInfo(name = "Surname")
+    @ColumnInfo(name = "SurName")
     @NonNull
     public String Surname;
 
@@ -39,7 +39,7 @@ public class User {
     @NonNull
     public int Age = 0;
 
-    @ColumnInfo(name = "Gender")
+    @ColumnInfo(name = "Cinsiyet")
     @NonNull
     public int Gender = 0;
 
