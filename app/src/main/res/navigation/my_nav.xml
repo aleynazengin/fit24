@@ -99,6 +99,9 @@
         <action
             android:id="@+id/action_hosgeldinEkrani_to_diyetListe"
             app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_hosgeldinEkrani_to_kalorilisteEkran"
+            app:destination="@id/kalorilisteEkran" />
     </fragment>
     <fragment
         android:id="@+id/idealkiloEkran"
