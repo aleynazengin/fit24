@@ -7,18 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class KaloriListAdapter extends RecyclerView.Adapter<KaloriListAdapter.KaloriViewHolder> {
 
     class KaloriViewHolder extends RecyclerView.ViewHolder {
         private final TextView kaloriItemView;
+        private final TextView kaloriTextView;
 
         private KaloriViewHolder(View itemView) {
             super(itemView);
             kaloriItemView = itemView.findViewById(R.id.textViewitem);
+            kaloriTextView = itemView.findViewById(R.id.kaloriTextView);
         }
     }
 
@@ -26,7 +28,9 @@ public class KaloriListAdapter extends RecyclerView.Adapter<KaloriListAdapter.Ka
 
     private List<Kalori> mKalori; // Cached copy of words
 
-    KaloriListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
+    KaloriListAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+    }
 
     @Override
     public KaloriViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,15 +43,15 @@ public class KaloriListAdapter extends RecyclerView.Adapter<KaloriListAdapter.Ka
     public void onBindViewHolder(KaloriViewHolder holder, int position) {
         if (mKalori != null) {
             Kalori current = mKalori.get(position);
-            holder.kaloriItemView.setText(current.getAdi());
-            holder.kaloriItemView.setText(current.getKalorisi());
+            holder.kaloriItemView.setText(current.YemekAdi);
+            holder.kaloriTextView.setText(current.Kalorisi + "");
         } else {
             // Covers the case of data not being ready yet.
             holder.kaloriItemView.setText("Not found");
         }
     }
 
-    void setWords(List<Kalori> kaloris){
+    void setWords(List<Kalori> kaloris) {
         mKalori = kaloris;
         notifyDataSetChanged();
     }

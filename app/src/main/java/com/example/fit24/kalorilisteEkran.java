@@ -58,6 +58,9 @@ public class kalorilisteEkran extends Fragment {
         mKaloriViewModel.getAllKalori().observe(getActivity(), new Observer<List<Kalori>>() {
             @Override
             public void onChanged(@Nullable final List<Kalori> kaloris) {
+                for (Kalori kalori : kaloris) {
+                    System.out.println(String.format("%s - %d", kalori.YemekAdi, kalori.Kalorisi));
+                }
                 // Update the cached copy of the words in the adapter.
                 adapter.setWords(kaloris);
             }

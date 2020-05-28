@@ -10,12 +10,12 @@ import androidx.room.Query;
 @Dao
 public interface UserDao {
 
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM User")
     List<User> getUsers();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void save(User user);
 
-    @Query("DELETE FROM user")
+    @Query("DELETE FROM User")
     void deleteAll();
 }

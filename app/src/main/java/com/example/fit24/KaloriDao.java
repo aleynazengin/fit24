@@ -10,8 +10,12 @@ import java.util.List;
 @Dao
 public interface KaloriDao {
 
-    @Query("SELECT * FROM kalori ORDER BY YemekAdi ASC")
+    @Query("SELECT * FROM Kalori ORDER BY YemekAdi ASC")
     LiveData<List<Kalori>> getAlfabetikKalori();
+
+
+    @Query("SELECT * FROM Kalori WHERE YemekAdi LIKE '%' || :sorgu || '%'")
+    List<Kalori> getSorgu(String sorgu);
 
     @Insert
     void save(Kalori kalori);
