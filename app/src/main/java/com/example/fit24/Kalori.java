@@ -19,7 +19,9 @@ public class Kalori {
         @NonNull
         public int Kalorisi = 0;
 
-
-
+        public Kalori(String YemekAdi) {this.YemekAdi = YemekAdi;}
+        public Kalori(int Kalorisi) {this.Kalorisi = Kalorisi;}
+        public String getAdi(){return this.YemekAdi;}
+        public int getKalorisi(){return this.Kalorisi;}
 
 }
