@@ -69,5 +69,6 @@ public class kalorilisteEkran extends Fragment {
      return view;
     }
 
-            //aas
+
+
 }

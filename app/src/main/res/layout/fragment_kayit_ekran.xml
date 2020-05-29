@@ -46,7 +46,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/textAd"
+                    android:id="@+id/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -70,7 +70,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/textSoyad"
+                    android:id="@+id/editText6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,7 +94,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/textMail"
+                    android:id="@+id/editText3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -118,7 +118,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/textKadi"
+                    android:id="@+id/editText4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -146,7 +146,7 @@
                         android:textSize="25dp" />
 
                     <EditText
-                        android:id="@+id/textSifre"
+                        android:id="@+id/editText13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -172,7 +172,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/textSifre2"
+                    android:id="@+id/editText14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

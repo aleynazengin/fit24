@@ -11,17 +11,14 @@ import androidx.room.RoomDatabase;
 
 @Database(entities = {User.class, Kalori.class}, exportSchema = false, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
-
     public abstract UserDao userDao();
 
     public abstract KaloriDao kaloriDao();
 
-    private static final String DB_NAME = "fit24.db";
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =
         Executors.newFixedThreadPool(NUMBER_OF_THREADS);
-
 
     static AppDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
@@ -37,5 +34,4 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
-
 }
