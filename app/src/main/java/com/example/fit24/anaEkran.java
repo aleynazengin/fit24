@@ -17,7 +17,7 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class anaEkran extends Fragment {
+public class anaEkran extends Fragment implements View.OnClickListener{
     Button btngiris,btnkayit;
 
     public anaEkran() {
@@ -29,9 +29,10 @@ public class anaEkran extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_ana_ekran, container, false);
+        View view = inflater.inflate(R.layout.fragment_ana_ekran, container, false);
         btngiris=view.findViewById(R.id.buttongiris);
         btnkayit=view.findViewById(R.id.buttonkayit);
+        btnkayit.setOnClickListener(this);
         return view;
     }
 
@@ -51,5 +52,16 @@ public class anaEkran extends Fragment {
                 navController.navigate(R.id.action_anaEkran_to_girisEkran2);
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+    switch (view.getId())
+        {
+            case R.id.buttonkayit:MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container_view_tag,new kayitEkran()).addToBackStack(null).commit();
+            break;
+
+        }
+
     }
 }
