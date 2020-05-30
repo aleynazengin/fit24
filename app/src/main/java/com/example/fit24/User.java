@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "User")
 public class User {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "UserId")
     @NonNull
     public int Id = 0;
@@ -55,4 +55,76 @@ public class User {
     @NonNull
     public int Reactivity = 0;
 
+    public int getId() {
+        return Id;
+    }
+
+    @NonNull
+    public String getUsername() {
+        return Username;
+    }
+
+    @NonNull
+    public String getPassword() {
+        return Password;
+    }
+
+    @NonNull
+    public String getEmail() {
+        return Email;
+    }
+
+    @NonNull
+    public String getName() {
+        return Name;
+    }
+
+    @NonNull
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setUsername(@NonNull String username) {
+        Username = username;
+    }
+
+    public void setPassword(@NonNull String password) {
+        Password = password;
+    }
+
+    public void setEmail(@NonNull String email) {
+        Email = email;
+    }
+
+    public void setName(@NonNull String name) {
+        Name = name;
+    }
+
+    public void setSurname(@NonNull String surname) {
+        Surname = surname;
+    }
+
+    public void setHeight(int height) {
+        Height = height;
+    }
+
+    public void setAge(int age) {
+        Age = age;
+    }
+
+    public void setGender(int gender) {
+        Gender = gender;
+    }
+
+    public void setWeight(int weight) {
+        Weight = weight;
+    }
+
+    public void setGoal(int goal) {
+        Goal = goal;
+    }
+
+    public void setReactivity(int reactivity) {
+        Reactivity = reactivity;
+    }
 }
