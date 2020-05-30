@@ -7,8 +7,13 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 
-@Entity(tableName = "Diyet")
-//Foreign key ???
+@Entity(tableName = "Diyet",foreignKeys = {
+        @ForeignKey(
+                entity = User.class,
+                parentColumns = "UserId",
+                childColumns = "UserId"
+        )})
+
 public class Diyet {
     @PrimaryKey
     @ColumnInfo(name = "DiyetId")
@@ -29,7 +34,7 @@ public class Diyet {
     public String DiyetAciklama;
 
     @ColumnInfo(name = "DiyetImage")
-    @NonNull
+
     public String DiyetImage;
 
     @ColumnInfo(name = "DiyetKalorisi")

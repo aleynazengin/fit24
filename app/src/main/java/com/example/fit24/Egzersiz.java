@@ -3,9 +3,15 @@ package com.example.fit24;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Egzersiz")
+@Entity(tableName = "Egzersiz",foreignKeys = {
+        @ForeignKey(
+                entity = User.class,
+                parentColumns = "UserId",
+                childColumns = "UserId"
+        )})
 public class Egzersiz {
     @PrimaryKey
     @ColumnInfo(name = "EgzersizId")
@@ -21,7 +27,7 @@ public class Egzersiz {
     public String EgzersizAdi;
 
     @ColumnInfo(name = "EgzersizImage")
-    @NonNull
+
     public String EgzersizImage;
 
     @ColumnInfo(name = "EgzersizAciklama")
