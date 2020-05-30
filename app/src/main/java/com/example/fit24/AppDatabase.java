@@ -9,11 +9,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Kalori.class}, exportSchema = false, version = 3)
+@Database(entities = {User.class, Kalori.class,Tuketim.class,Egzersiz.class,Diyet.class}, exportSchema = false, version = 6)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
 
     public abstract KaloriDao kaloriDao();
+    public abstract TuketimDao tuketimDao();
+    public abstract EgzersizDao egzersizDao();
+    public abstract DiyetDao diyetDao();
 
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -28,7 +31,8 @@ public abstract class AppDatabase extends RoomDatabase {
                         AppDatabase.class, "device.db")
                         .allowMainThreadQueries()
                         .createFromAsset("databases/fit.db")
-                        .build();
+                        .fallbackToDestructiveMigration()
+                            .build();
                 }
             }
         }

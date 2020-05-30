@@ -86,13 +86,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="wrap_content"
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="245dp"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Yemek ara..." />
+                    android:layout_weight="1"
+                    android:hint="Yemek ara .." />
             </SearchView>
 
             <Button
@@ -102,9 +101,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginVertical="10dp"
+                android:layout_marginLeft="10dp"
                 android:background="#FFFFFF"
                 android:text="Ekle"
-                android:layout_marginLeft="10dp"
                 android:textColor="#009688"
                 android:textSize="20dp"
                 android:textStyle="bold" />
