@@ -74,10 +74,8 @@ public class User {
         return Email;
     }
 
-    @NonNull
-    public String getName() {
-        return Name;
-    }
+
+
 
     @NonNull
     public String getSurname() {
