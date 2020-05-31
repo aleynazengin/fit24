@@ -13,6 +13,8 @@ public interface KaloriDao {
     @Query("SELECT * FROM Kalori ORDER BY YemekAdi ASC")
     LiveData<List<Kalori>> getAlfabetikKalori();
 
+    @Query("SELECT * FROM Kalori")
+    LiveData<List<Kalori>> getKalori();
 
     @Query("SELECT * FROM Kalori WHERE YemekAdi LIKE '%' || :sorgu || '%'")
     List<Kalori> getSorgu(String sorgu);

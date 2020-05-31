@@ -94,7 +94,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/editTexteposta"
+                    android:id="@+id/editTextepostası"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -118,7 +118,7 @@
                     android:textSize="25dp" />
 
                 <EditText
-                    android:id="@+id/editTextkad"
+                    android:id="@+id/editTextkadı"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

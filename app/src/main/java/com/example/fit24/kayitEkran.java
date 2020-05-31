@@ -27,7 +27,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class kayitEkran extends Fragment {
     Button kayitol;
     ViewModel userViewModel;
-
+    EditText adı,soyadı,kadı,eposta,sifre;
 
     public kayitEkran() {
         // Required empty public constructor
@@ -41,6 +41,11 @@ public class kayitEkran extends Fragment {
         View view= inflater.inflate(R.layout.fragment_kayit_ekran, container, false);
         userViewModel = ViewModelProviders.of(this).get(ViewModel.class);
         kayitol=view.findViewById(R.id.buttonkayitol);
+        adı = view.findViewById(R.id.editTextadı);
+        soyadı = view.findViewById(R.id.editTextsoyadı);
+        kadı = view.findViewById(R.id.editTextkadı);
+        eposta = view.findViewById(R.id.editTextepostası);
+        sifre = view.findViewById(R.id.editTextsifresi);
 
         return view;
     }
@@ -48,21 +53,17 @@ public class kayitEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final NavController navController = Navigation.findNavController(view);
+
         kayitol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText adı = view.findViewById(R.id.editTextadı);
-                EditText soyadı = view.findViewById(R.id.editTextsoyadı);
-                EditText kad = view.findViewById(R.id.editTextkad);
-                EditText eposta = view.findViewById(R.id.editTexteposta);
-                EditText sifre = view.findViewById(R.id.editTextsifresi);
+
                 User users = new User();
                 users.setName(adı.getText().toString());
                 users.setSurname(soyadı.getText().toString());
                 users.setAge(0);
                 users.setEmail(eposta.getText().toString());
-                users.setUsername(kad.getText().toString());
+                users.setUsername(kadı.getText().toString());
                 users.setPassword(sifre.getText().toString());
                 users.setGender(0);
                 users.setGoal(0);
@@ -72,7 +73,7 @@ public class kayitEkran extends Fragment {
                 userViewModel.insertUsers(users);
                 Snackbar.make(view,"Kayıt başarılı",Snackbar.LENGTH_LONG).setAction("Action",null).show();
 
-
+                final NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.action_kayitEkran_to_cinsiyetEkran);
             }
         });
