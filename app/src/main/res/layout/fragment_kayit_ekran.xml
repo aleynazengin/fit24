@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
-
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
 
 
             <ImageView
@@ -28,22 +28,12 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginBottom="50dp"
-                app:srcCompat="@drawable/logo"
-                 />
+                app:srcCompat="@drawable/logo" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="Ad:"
-                    android:textColor="@color/siyah"
-                    android:textSize="25dp" />
 
                 <EditText
                     android:id="@+id/editTextadı"
@@ -51,7 +41,9 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:inputType="textMultiLine" />
+                    android:hint="Ad"
+                    android:inputType="textMultiLine"
+                    android:textColorHighlight="#251919" />
 
             </LinearLayout>
 
@@ -60,21 +52,13 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="Soyad:"
-                    android:textColor="@color/siyah"
-                    android:textSize="25dp" />
-
                 <EditText
                     android:id="@+id/editTextsoyadı"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:hint="Soyad"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -84,21 +68,13 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="E-Posta:"
-                    android:textColor="@color/siyah"
-                    android:textSize="25dp" />
-
                 <EditText
                     android:id="@+id/editTextepostası"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:hint="E-posta"
                     android:inputType="textEmailAddress" />
 
             </LinearLayout>
@@ -108,21 +84,13 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textViewad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="Kullanıcı Adı:"
-                    android:textColor="@color/siyah"
-                    android:textSize="25dp" />
-
                 <EditText
                     android:id="@+id/editTextkadı"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:hint="Kullanıcı Adı"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
@@ -136,21 +104,13 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textViewsifre"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Şifre:"
-                        android:textColor="@color/siyah"
-                        android:textSize="25dp" />
-
                     <EditText
                         android:id="@+id/editTextsifresi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:hint="Şifre"
                         android:inputType="textPassword" />
 
                 </LinearLayout>
@@ -158,17 +118,16 @@
             </LinearLayout>
 
 
-
             <Button
                 android:id="@+id/buttonkayitol"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
                 android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
                 android:text="Kayıt Ol"
-                android:textSize="20dp"
                 android:textColor="#009688"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
