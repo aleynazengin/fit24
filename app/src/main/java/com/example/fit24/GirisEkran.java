@@ -44,16 +44,22 @@ public class GirisEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        checkDataEntered();
-        if(durum==true) {
-            final NavController navController = Navigation.findNavController(view);
-            girisyap.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    navController.navigate(R.id.action_girisEkran_to_hosgeldinEkrani);
+        girisyap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkDataEntered();
+                if(durum==true) {
+                    final NavController navController = Navigation.findNavController(view);
+                    girisyap.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            navController.navigate(R.id.action_girisEkran_to_hosgeldinEkrani);
+                        }
+                    });
                 }
-            });
-        }
+            }
+        });
+
     }
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
