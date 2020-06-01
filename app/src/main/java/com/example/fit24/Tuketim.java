@@ -4,14 +4,25 @@ package com.example.fit24;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Tuketim")
+@Entity(tableName = "Tuketim",foreignKeys = {
+        @ForeignKey(
+                entity = User.class,
+                parentColumns = "UserId",
+                childColumns = "UserId"
+        ),
+        @ForeignKey(
+                entity = Kalori.class,
+                parentColumns = "KaloriId",
+                childColumns = "KaloriId"
+        )})
 public class Tuketim {
     @PrimaryKey
-    @ColumnInfo(name = "TüketimId")
+    @ColumnInfo(name = "TuketimId")
     @NonNull
-    public int TüketimId = 0;
+    public int TuketimId = 0;
 
 
     @ColumnInfo(name = "UserId")

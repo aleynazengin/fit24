@@ -35,39 +35,37 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText5"
-                android:layout_width="wrap_content"
+                android:id="@+id/editTextkad"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10pt"
-                android:layout_marginBottom="20dp"
-                android:text="Şifre:"
+                android:text="Şifre: "
                 android:textColor="@color/siyah"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText7"
-                android:layout_width="wrap_content"
+                android:id="@+id/editTextsifre"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName" />
 
         </LinearLayout>
+
+
 
         <Button
             android:id="@+id/buttongiris2"
