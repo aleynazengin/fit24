@@ -38,16 +38,7 @@ public class kalorilisteEkran extends Fragment {
 
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
 
-        final UserDao userDao = database.userDao();
-        StringBuilder builder = new StringBuilder();
 
-        //List<User> users = userDao.getUsers();
-        //for (int x = 0; x < users.size(); x++){
-         //   builder.append("Ad: ").append(users.get(x).Username+"\n");
-         //   builder.append("Soyad: ").append(users.get(x).Surname+"\n");
-       // }
-        //TextView text= (TextView)view.findViewById(R.id.textViewbilgiler);
-       // text.setText(builder);
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
         final KaloriListAdapter adapter = new KaloriListAdapter(getActivity());
