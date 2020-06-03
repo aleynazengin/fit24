@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashEkran"
-        android:name="com.example.fit24.splashEkran"
+        android:name="com.gelecek.fit24.splashEkran"
         android:label="fragment_splash_ekran"
         tools:layout="@layout/fragment_splash_ekran" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/anaEkran"
-        android:name="com.example.fit24.anaEkran"
+        android:name="com.gelecek.fit24.anaEkran"
         android:label="fragment_ana_ekran"
         tools:layout="@layout/fragment_ana_ekran" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/ayarlarFragment"
-        android:name="com.example.fit24.ayarlarFragment"
+        android:name="com.gelecek.fit24.ayarlarFragment"
         android:label="fragment_ayarlar"
         tools:layout="@layout/fragment_ayarlar" />
     <fragment
         android:id="@+id/girisEkran"
-        android:name="com.example.fit24.GirisEkran"
+        android:name="com.gelecek.fit24.GirisEkran"
         android:label="fragment_giris_ekran"
         tools:layout="@layout/fragment_giris_ekran" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/kayitEkran"
-        android:name="com.example.fit24.kayitEkran"
+        android:name="com.gelecek.fit24.kayitEkran"
         android:label="fragment_kayit_ekran"
         tools:layout="@layout/fragment_kayit_ekran" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/cinsiyetEkran"
-        android:name="com.example.fit24.cinsiyetEkran"
+        android:name="com.gelecek.fit24.cinsiyetEkran"
         android:label="fragment_cinsiyet_ekran"
         tools:layout="@layout/fragment_cinsiyet_ekran" >
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/egzersizListe"
-        android:name="com.example.fit24.egzersizListe"
+        android:name="com.gelecek.fit24.egzersizListe"
         android:label="fragment_egzersiz_liste"
         tools:layout="@layout/fragment_egzersiz_liste" >
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/hedefEkran"
-        android:name="com.example.fit24.hedefEkran"
+        android:name="com.gelecek.fit24.hedefEkran"
         android:label="fragment_hedef_ekran"
         tools:layout="@layout/fragment_hedef_ekran" >
         <action
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/hosgeldinEkrani"
-        android:name="com.example.fit24.hosgeldinEkrani"
+        android:name="com.gelecek.fit24.hosgeldinEkrani"
         android:label="fragment_hosgeldin_ekrani"
         tools:layout="@layout/fragment_hosgeldin_ekrani" >
         <action
@@ -105,7 +105,7 @@
     </fragment>
     <fragment
         android:id="@+id/idealkiloEkran"
-        android:name="com.example.fit24.idealkiloEkran"
+        android:name="com.gelecek.fit24.idealkiloEkran"
         android:label="fragment_idealkilo_ekran"
         tools:layout="@layout/fragment_idealkilo_ekran" >
         <action
@@ -120,12 +120,12 @@
     </fragment>
     <fragment
         android:id="@+id/kalorilisteEkran"
-        android:name="com.example.fit24.kalorilisteEkran"
+        android:name="com.gelecek.fit24.kalorilisteEkran"
         android:label="fragment_kaloriliste_ekran"
         tools:layout="@layout/fragment_kaloriliste_ekran" />
     <fragment
         android:id="@+id/spordereceEkran"
-        android:name="com.example.fit24.spordereceEkran"
+        android:name="com.gelecek.fit24.spordereceEkran"
         android:label="fragment_sporderece_ekran"
         tools:layout="@layout/fragment_sporderece_ekran" >
         <action
@@ -134,7 +134,7 @@
     </fragment>
     <fragment
         android:id="@+id/bilgiEkranim"
-        android:name="com.example.fit24.bilgiEkranim"
+        android:name="com.gelecek.fit24.bilgiEkranim"
         android:label="fragment_bilgi_ekranim"
         tools:layout="@layout/fragment_bilgi_ekranim" >
         <action
@@ -143,7 +143,7 @@
     </fragment>
     <fragment
         android:id="@+id/diyetListe"
-        android:name="com.example.fit24.diyetListe"
+        android:name="com.gelecek.fit24.diyetListe"
         android:label="fragment_diyet_liste"
         tools:layout="@layout/fragment_diyet_liste" >
         <action
