@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animationCache="false"
+    android:keepScreenOn="false"
     tools:context=".cinsiyetEkran">
 
     <LinearLayout
@@ -14,8 +16,9 @@
 
         <ImageView
             android:id="@+id/imageView6"
+            style="?android:borderlessButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="214dp"
             app:srcCompat="@drawable/logo" />
 
         <TextView
@@ -23,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
+
             android:text="Cinsiyet"
             android:textColor="@color/siyah"
             android:textSize="25dp" />
@@ -31,23 +34,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:gravity="center"
-            android:layout_marginTop="20dp"
-            >
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="133dp"
-                android:layout_height="147dp"
+                android:id="@+id/imageViewerkek"
+                android:layout_width="138dp"
+                android:layout_height="148dp"
+                android:clickable="true"
                 app:srcCompat="@drawable/cinsiyet2" />
 
             <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="133dp"
-                android:layout_height="147dp"
-                app:srcCompat="@drawable/cinsiyet" />
+                android:id="@+id/imageViewkadın"
+                android:layout_width="138dp"
+                android:layout_marginLeft="3dp"
+                android:layout_height="148dp"
+                app:srcCompat="@drawable/cinsiyet"
+                />
         </LinearLayout>
 
         <ProgressBar
@@ -55,7 +61,7 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:max="100"
             android:progress="25"
             android:progressTint="#9C27B0" />
@@ -71,13 +77,14 @@
             android:textColor="#009688"
             android:textSize="20dp"
             android:textStyle="bold" />
+
         <Button
             android:id="@+id/buttondevam"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Devam"
             android:textColor="#009688"
             android:textSize="20dp"

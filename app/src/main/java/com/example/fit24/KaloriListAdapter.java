@@ -27,7 +27,7 @@ public class KaloriListAdapter extends RecyclerView.Adapter<KaloriListAdapter.Ka
 
     private final LayoutInflater mInflater;
 
-    private List<Kalori> mKalori; // Cached copy of words
+    private List<Kalori> mKalori;
 
     KaloriListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
