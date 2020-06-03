@@ -23,6 +23,9 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +47,7 @@ public class kayitEkran extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_kayit_ekran, container, false);
+
         userViewModel = ViewModelProviders.of(this).get(ViewModel.class);
         kayitol=view.findViewById(R.id.buttonkayitol);
         adı = view.findViewById(R.id.editTextadı);
@@ -65,8 +69,10 @@ public class kayitEkran extends Fragment {
             public void onClick(View view) {
 
                 checkDataEntered();
+                User users = new User();
+                checkUnique(users);
                 if (durum==true) {
-                    User users = new User();
+
                     users.setName(adı.getText().toString());
                     users.setSurname(soyadı.getText().toString());
                     users.setAge(0);
@@ -123,10 +129,23 @@ public class kayitEkran extends Fragment {
             Toast t = Toast.makeText(getActivity(), "Şifre 6 karakterden az olamaz !", Toast.LENGTH_SHORT);
             t.show();
         }
-        else{
-            durum=true;
-        }
+
 
     }
+    void checkUnique(User users)
+    {
+        AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+        final UserDao userDao = database.userDao();
+        List<User> users1 = userDao.getSorgum(eposta.getText().toString());
+       if (users1.size()>0){
+           durum=false;
+       }
+       else{
+           durum=true;
+
+       }
+
+    }
+
 
 }

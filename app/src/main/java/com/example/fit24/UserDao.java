@@ -16,6 +16,9 @@ public interface UserDao {
     @Query("SELECT * FROM User")
     LiveData<List<User>> getUsers();
 
+    @Query("SELECT * FROM User WHERE Email LIKE '%' || :sorgu || '%'")
+    List<User> getSorgum(String sorgu);
+
     @Insert
     void insertUsers(User user);
 
