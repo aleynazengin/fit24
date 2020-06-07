@@ -9,7 +9,7 @@ import java.util.List;
 @Dao
 public interface DiyetDao {
     @Query("SELECT * FROM Diyet")
-    LiveData<List<Diyet>> getDiyet();
+    LiveData<List<Diyet>> getDiyetler();
 
     @Insert
     void save(Diyet diyet);

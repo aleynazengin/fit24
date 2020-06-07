@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +25,7 @@ import android.widget.Toast;
 public class GirisEkran extends Fragment {
     Button girisyap;
     Boolean durum=false;
-    EditText kadı,sifre;
+    EditText email,sifre;
 
     public GirisEkran() {
         // Required empty public constructor
@@ -36,7 +38,7 @@ public class GirisEkran extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_giris_ekran, container, false);
         girisyap=view.findViewById(R.id.buttongiris2);
-        kadı=view.findViewById(R.id.editTextkad);
+        email=view.findViewById(R.id.editTextemail);
         sifre=view.findViewById(R.id.editTextsifre);
         return  view;
     }
@@ -48,7 +50,10 @@ public class GirisEkran extends Fragment {
             @Override
             public void onClick(View view) {
                 checkDataEntered();
+                User users = new User();
+                checkLogin(users);
                 if(durum==true) {
+
                     final NavController navController = Navigation.findNavController(view);
                     girisyap.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -66,8 +71,8 @@ public class GirisEkran extends Fragment {
         return TextUtils.isEmpty(str);
     }
     void checkDataEntered(){
-        if (isEmpty(kadı)) {
-            Toast t = Toast.makeText(getActivity(), "Kullanıcı adı boş bırakılamaz!", Toast.LENGTH_SHORT);
+        if (isEmpty(email)) {
+            Toast t = Toast.makeText(getActivity(), "Email boş bırakılamaz!", Toast.LENGTH_SHORT);
             t.show();
         }
         else if (isEmpty(sifre)) {
@@ -77,5 +82,22 @@ public class GirisEkran extends Fragment {
         else{
             durum=true;
         }
+    }
+    void checkLogin(User users)
+    {
+        AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+        final UserDao userDao = database.userDao();
+        List<User> users1 = userDao.getLoginSorgum(email.getText().toString(),sifre.getText().toString());
+        if (users1.size()>0){
+            durum=true;
+
+        }
+        else{
+            durum=false;
+            Toast t = Toast.makeText(getActivity(), "Email veya şifre yanlış", Toast.LENGTH_SHORT);
+            t.show();
+
+        }
+
     }
 }
