@@ -17,6 +17,9 @@ public interface UserDao {
     @Query("SELECT * FROM User WHERE Email LIKE '%' || :sorgu || '%'")
     List<User> getSorgum(String sorgu);
 
+    @Query("SELECT * FROM User WHERE Email LIKE '%' || :email || '%' AND Password LIKE '%' || :sifre || '%'")
+    List<User> getLoginSorgum(String email,String sifre);
+
     @Insert
     void insertUsers(User user);
 

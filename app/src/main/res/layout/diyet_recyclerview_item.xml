@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/buttondiyetgetir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@android:color/holo_purple"
+        android:textColor="@android:color/black"
+        android:theme="@style/Button.Holo_Purple"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
+    <TextView
+        android:id="@+id/textViewdiyetitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
+</LinearLayout>

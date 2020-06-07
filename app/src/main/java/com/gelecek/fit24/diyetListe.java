@@ -5,13 +5,19 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import java.util.List;
 
 
 /**
@@ -19,7 +25,8 @@ import android.widget.Button;
  */
 public class diyetListe extends Fragment {
     Button egzersizegit,idealsayfasinagit,diyetegit;
-
+    private DiyetViewModel mDiyetViewModel;
+    public static final int NEW_DIYET_ACTIVITY_REQUEST_CODE = 1;
     public diyetListe() {
         // Required empty public constructor
     }
@@ -33,6 +40,22 @@ public class diyetListe extends Fragment {
         egzersizegit=view.findViewById(R.id.buttonegzersiz3);
         idealsayfasinagit=view.findViewById(R.id.buttonideal3);
         diyetegit=view.findViewById(R.id.buttondiyet3);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerview2);
+        final DiyetListAdapter adapter = new DiyetListAdapter(getActivity());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        mDiyetViewModel = new ViewModelProvider(getActivity()).get(DiyetViewModel.class);
+        mDiyetViewModel.getAllDiyet().observe(getActivity(), new Observer<List<Diyet>>() {
+            @Override
+            public void onChanged(@Nullable final List<Diyet> diyets) {
+                for (Diyet diyet : diyets ) {
+                    System.out.println(String.format("%s - %s", diyet.DİyetAdi, diyet.DiyetAciklama));
+                }
+                // Update the cached copy of the words in the adapter.
+                adapter.setWords(diyets);
+            }
+        });
         return view;
     }
 
