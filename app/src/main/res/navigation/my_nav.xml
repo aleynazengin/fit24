@@ -75,6 +75,9 @@
         <action
             android:id="@+id/action_egzersizListe_to_diyetListe"
             app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_egzersizListe_to_kalorilisteEkran"
+            app:destination="@id/kalorilisteEkran" />
     </fragment>
     <fragment
         android:id="@+id/hedefEkran"
@@ -117,12 +120,28 @@
         <action
             android:id="@+id/action_idealkiloEkran_to_diyetListe"
             app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_idealkiloEkran_to_kalorilisteEkran"
+            app:destination="@id/kalorilisteEkran" />
     </fragment>
     <fragment
         android:id="@+id/kalorilisteEkran"
         android:name="com.gelecek.fit24.kalorilisteEkran"
         android:label="fragment_kaloriliste_ekran"
-        tools:layout="@layout/fragment_kaloriliste_ekran" />
+        tools:layout="@layout/fragment_kaloriliste_ekran" >
+        <action
+            android:id="@+id/action_kalorilisteEkran_self"
+            app:destination="@id/kalorilisteEkran" />
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_egzersizListe"
+            app:destination="@id/egzersizListe" />
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_diyetListe"
+            app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_idealkiloEkran"
+            app:destination="@id/idealkiloEkran" />
+    </fragment>
     <fragment
         android:id="@+id/spordereceEkran"
         android:name="com.gelecek.fit24.spordereceEkran"
@@ -155,5 +174,8 @@
         <action
             android:id="@+id/action_diyetListe_to_egzersizListe"
             app:destination="@id/egzersizListe" />
+        <action
+            android:id="@+id/action_diyetListe_to_kalorilisteEkran"
+            app:destination="@id/kalorilisteEkran" />
     </fragment>
 </navigation>

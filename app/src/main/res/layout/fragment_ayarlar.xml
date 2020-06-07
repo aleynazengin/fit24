@@ -12,23 +12,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
-
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="158dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/logo"
-            />
-
+            android:background="#F5F5F5"
+            android:backgroundTint="@color/background"
+            app:srcCompat="@drawable/seticon" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

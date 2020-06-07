@@ -23,7 +23,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class hosgeldinEkrani extends Fragment {
-    Button egzersizegit,idealsayfasinagit,diyetegit;
+    Button egzersizegit,idealsayfasinagit,diyetegit,butonkalori;
     AutoCompleteTextView autotext;
     private KaloriViewModel mKaloriViewModel;
     public static final int NEW_KALORI_ACTIVITY_REQUEST_CODE = 1;
@@ -45,6 +45,7 @@ public class hosgeldinEkrani extends Fragment {
         egzersizegit=view.findViewById(R.id.buttonegzersiz);
         idealsayfasinagit=view.findViewById(R.id.buttonideal);
         diyetegit=view.findViewById(R.id.buttondiyet);
+        butonkalori=view.findViewById(R.id.buttonkalori);
         autotext=view.findViewById(R.id.autoCompleteTextView);
 
         List<String> arrList = new ArrayList<String>();
@@ -81,9 +82,14 @@ public class hosgeldinEkrani extends Fragment {
         diyetegit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //navController.navigate(R.id.action_hosgeldinEkrani_to_kalorilisteEkran);
                 navController.navigate(R.id.action_hosgeldinEkrani_to_diyetListe);
 
+            }
+        });
+        butonkalori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_hosgeldinEkrani_to_kalorilisteEkran);
             }
         });
     }
