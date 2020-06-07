@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -24,8 +25,10 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class diyetListe extends Fragment {
-    Button egzersizegit,idealsayfasinagit,diyetegit;
+    Button egzersizegit,idealsayfasinagit,diyetegit,diyetgetir;
     private DiyetViewModel mDiyetViewModel;
+    TextView aciklama;
+
     public static final int NEW_DIYET_ACTIVITY_REQUEST_CODE = 1;
     public diyetListe() {
         // Required empty public constructor
@@ -40,6 +43,8 @@ public class diyetListe extends Fragment {
         egzersizegit=view.findViewById(R.id.buttonegzersiz3);
         idealsayfasinagit=view.findViewById(R.id.buttonideal3);
         diyetegit=view.findViewById(R.id.buttondiyet3);
+        diyetgetir=view.findViewById(R.id.buttondiyetgetir);
+        aciklama=view.findViewById(R.id.textViewdiyetitem);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview2);
         final DiyetListAdapter adapter = new DiyetListAdapter(getActivity());
         recyclerView.setAdapter(adapter);
@@ -56,6 +61,7 @@ public class diyetListe extends Fragment {
                 adapter.setWords(diyets);
             }
         });
+
         return view;
     }
 
