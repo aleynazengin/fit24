@@ -61,7 +61,18 @@ public class diyetListe extends Fragment {
                 adapter.setWords(diyets);
             }
         });
+       /* diyetgetir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (aciklama.getVisibility()!=View.VISIBLE){
+                    aciklama.setVisibility(View.VISIBLE);
+                }
+                else{
+                    aciklama.setVisibility(View.GONE);
+                }
 
+            }
+        }); */
         return view;
     }
 

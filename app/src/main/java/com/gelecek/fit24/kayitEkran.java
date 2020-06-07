@@ -31,6 +31,7 @@ public class kayitEkran extends Fragment {
     ViewModel userViewModel;
     EditText adı,soyadı,eposta,sifre;
     Boolean durum=false;
+    Boolean durum2=false;
 
 
     public kayitEkran() {
@@ -66,7 +67,7 @@ public class kayitEkran extends Fragment {
                 checkDataEntered();
                 User users = new User();
                 checkUnique(users);
-                if (durum==true) {
+                if (durum==true && durum2==true) {
 
                     users.setName(adı.getText().toString());
                     users.setSurname(soyadı.getText().toString());
@@ -117,8 +118,12 @@ public class kayitEkran extends Fragment {
         }
         else if (sifre.length()<5)
         {
+
             Toast t = Toast.makeText(getActivity(), "Şifre 6 karakterden az olamaz !", Toast.LENGTH_SHORT);
             t.show();
+        }
+        else{
+            durum=true;
         }
 
 
@@ -129,10 +134,10 @@ public class kayitEkran extends Fragment {
         final UserDao userDao = database.userDao();
         List<User> users1 = userDao.getSorgum(eposta.getText().toString());
        if (users1.size()>0){
-           durum=false;
+           durum2=false;
        }
        else{
-           durum=true;
+           durum2=true;
 
        }
 
