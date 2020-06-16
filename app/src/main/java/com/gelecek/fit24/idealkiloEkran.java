@@ -12,13 +12,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class idealkiloEkran extends Fragment {
-    Button egzersizegit,idealsayfasinagit,diyetegit;
+    Button egzersizegit,idealsayfasinagit,diyetegit,btnhesapla;
+    EditText editTextboy,editTextkilo;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
+    int boy=0,kilo=0;
+    double idealkilo=0,fark=0;
+    TextView txtideal,txtfark;
+    String value, value2;
 
     public idealkiloEkran() {
         // Required empty public constructor
@@ -33,6 +44,36 @@ public class idealkiloEkran extends Fragment {
         egzersizegit=view.findViewById(R.id.buttonegzersiz2);
         idealsayfasinagit=view.findViewById(R.id.buttonideal2);
         diyetegit=view.findViewById(R.id.buttondiyet2);
+        editTextboy=view.findViewById(R.id.editTextboy);
+        editTextkilo=view.findViewById(R.id.editTextkilo);
+        btnhesapla=view.findViewById(R.id.buttonhesapla);
+        radioGroup = view.findViewById(R.id.rdgrup);
+        txtideal=view.findViewById(R.id.textViewideal);
+        txtfark = view.findViewById(R.id.textViewfark);
+        btnhesapla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value=editTextkilo.getText().toString();
+                kilo =Integer.parseInt(value);
+                value2=editTextboy.getText().toString();
+                boy =Integer.parseInt(value2);
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radioButton = v.findViewById(selectedId);
+                if (radioButton.getText()=="Kadın"){
+                    idealkilo= 45.5 + (2.3 / 2.54)*(boy - 152.4);
+                }
+                if (radioButton.getText()=="Erkek"){
+                    idealkilo=50 + (2.3 / 2.54)*(boy - 152.4);
+                }
+                txtideal.setText(idealkilo+"");
+                fark= idealkilo-kilo;
+                txtfark.setText(""+fark);
+
+            }
+        });
+
         return view;
     }
 

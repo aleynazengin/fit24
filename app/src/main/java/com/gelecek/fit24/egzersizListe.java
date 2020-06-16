@@ -57,7 +57,7 @@ public class egzersizListe extends Fragment {
             @Override
             public void onChanged(@Nullable final List<Egzersiz> egzersizs) {
                 for (Egzersiz egzersiz : egzersizs) {
-                    System.out.println(String.format("%s - %s", egzersiz.EgzersizAdi, egzersiz.EgzersizAciklama));
+                    System.out.println(String.format("%s - %s", egzersiz.EgzersizImage,egzersiz.EgzersizAdi));
                 }
                 // Update the cached copy of the words in the adapter.
                 adapter.setWords(egzersizs);

@@ -1,5 +1,7 @@
 package com.gelecek.fit24;
 
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,10 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 /**
@@ -19,6 +25,8 @@ import android.widget.ImageView;
  */
 public class splashEkran extends Fragment {
     private ImageView logo;
+    private TextView dogru,spor,form;
+    private static int splashTimeout= 5000;
     public splashEkran() {
         // Required empty public constructor
     }
@@ -30,7 +38,9 @@ public class splashEkran extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_splash_ekran, container, false);
         logo=view.findViewById(R.id.imageViewlogo);
-
+        dogru=view.findViewById(R.id.textViewdogru);
+        form=view.findViewById(R.id.textViewform);
+        spor=view.findViewById(R.id.textViewspor);
         return view;
     }
 
@@ -38,11 +48,18 @@ public class splashEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final NavController navController = Navigation.findNavController(view);
-        logo.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
+            public void run() {
                 navController.navigate(R.id.action_anaekranagit);
+
             }
-        });
+        },splashTimeout);
+        Animation myanim= AnimationUtils.loadAnimation(getActivity(),R.anim.mysplashanimation);
+        logo.startAnimation(myanim);
+        dogru.startAnimation(myanim);
+        form.startAnimation(myanim);
+        spor.startAnimation(myanim);
+
     }
 }

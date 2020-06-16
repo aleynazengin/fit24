@@ -16,6 +16,7 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         private final Button diyetItemView;
         private final TextView diyetTextView;
 
+
         private DiyetViewHolder(View itemView) {
             super(itemView);
             diyetItemView = itemView.findViewById(R.id.buttondiyetgetir);
@@ -23,7 +24,7 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         }
     }
 
-
+    private int currentSelectedPosition = RecyclerView.NO_POSITION;
     private final LayoutInflater mInflater;
 
     private List<Diyet> mDiyet;
@@ -40,7 +41,7 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
     }
 
     @Override
-    public void onBindViewHolder(DiyetListAdapter.DiyetViewHolder holder, int position) {
+    public void onBindViewHolder(DiyetListAdapter.DiyetViewHolder holder, final int position) {
         if (mDiyet != null) {
             Diyet current = mDiyet.get(position);
             holder.diyetItemView.setText(current.DİyetAdi);
@@ -48,6 +49,19 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         } else {
             // Covers the case of data not being ready yet.
             holder.diyetItemView.setText("Not found");
+        }
+        holder.diyetItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentSelectedPosition = position;
+                notifyDataSetChanged();
+            }
+        });
+        if (currentSelectedPosition == position) {
+            holder.diyetTextView.setVisibility(View.VISIBLE);
+
+        } else {
+            holder.diyetTextView.setVisibility(View.GONE);
         }
     }
 
