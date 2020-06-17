@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:context=".splashEkran">
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,10 +18,11 @@
             android:layout_width="440dp"
             android:layout_height="281dp"
             android:layout_gravity="center"
+            android:background="#FFFFFF"
             app:srcCompat="@drawable/logo" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -31,18 +33,18 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewspor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SPOR YAP"
             android:layout_marginTop="20dp"
+            android:text="SPOR YAP"
             android:textColor="@color/Splash1"
             android:textSize="35dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewdogru"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

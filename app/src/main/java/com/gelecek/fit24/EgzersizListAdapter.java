@@ -18,14 +18,13 @@ public class EgzersizListAdapter extends RecyclerView.Adapter<EgzersizListAdapte
   class EgzersizViewHolder extends RecyclerView.ViewHolder{
       private final ImageView egzImage;
       private final TextView egzAdi;
-      private final TextView egzAciklama;
+
 
 
       private EgzersizViewHolder(View itemView) {
           super(itemView);
           egzImage=itemView.findViewById(R.id.egzImage);
           egzAdi=itemView.findViewById(R.id.egzAdi);
-          egzAciklama=itemView.findViewById(R.id.egzAciklama);
 
       }
   }
@@ -50,9 +49,9 @@ public class EgzersizListAdapter extends RecyclerView.Adapter<EgzersizListAdapte
     public void onBindViewHolder(EgzersizViewHolder holder, int position) {
         if (mEgzersiz != null) {
             Egzersiz current = mEgzersiz.get(position);
-           holder.egzImage.setImageDrawable(Drawable.createFromPath(current.EgzersizImage));
+            holder.egzImage.setImageDrawable(Drawable.createFromPath("assets/"+current.EgzersizImage));
             holder.egzAdi.setText(current.EgzersizAdi);
-            holder.egzAciklama.setText(current.EgzersizAciklama);
+
         } else {
             // Covers the case of data not being ready yet.
             holder.egzAdi.setText("Not found");

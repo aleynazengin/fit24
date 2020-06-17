@@ -10,7 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-76dp"
+        tools:layout_editor_absoluteY="68dp">
 
 
         <ImageView
@@ -33,8 +35,8 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
@@ -42,25 +44,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_weight="1"
-                android:text="Boyunuz :"
+
+                android:text="Boyunuz(cm) :"
                 android:textColor="@color/siyah"
                 android:textSize="25dp" />
 
-            <Spinner
-                android:id="@+id/spinner5"
-                android:layout_gravity="center"
-                android:layout_width="230dp"
+            <EditText
+                android:id="@+id/editTextboy"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:ems="7"
+                android:inputType="number"
+                android:textSize="23dp" />
 
-                android:background="@drawable/style_spinner" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
@@ -68,45 +70,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_weight="1"
                 android:layout_marginTop="2dp"
+                android:layout_weight="1"
                 android:text="Kilonuz :"
                 android:textColor="@color/siyah"
                 android:textSize="25dp" />
 
-            <Spinner
-                android:id="@+id/spinner6"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/style_spinner" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView24"
+            <EditText
+                android:id="@+id/editTextkilo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                android:text="Yaşınız  :"
-                android:textColor="@color/siyah"
-                android:textSize="25dp" />
+                android:ems="7"
+                android:inputType="number"
+                android:textSize="23dp" />
 
-            <Spinner
-                android:id="@+id/spinner7"
-                android:layout_gravity="center"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/style_spinner" />
         </LinearLayout>
 
         <LinearLayout
@@ -115,29 +94,38 @@
             android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_weight="1"
-                android:text="Cinsiyetiniz :"
-                android:textColor="@color/siyah"
-                android:textSize="25dp" />
-
-            <Spinner
-                android:id="@+id/spinner8"
+            <RadioGroup
+                android:id="@+id/rdgrup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_width="200dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/style_spinner" />
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
+                <RadioButton
+                    android:id="@+id/radioButtonkadın"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Kadın"
+                    android:textColorHighlight="#673AB7"
+                    android:textColorLink="#673AB7"
+                    android:textSize="23dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonerkek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Erkek"
+                    android:textColorHighlight="#673AB7"
+                    android:textColorLink="#673AB7"
+                    android:textSize="23dp" />
+            </RadioGroup>
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttongiris3"
+            android:id="@+id/buttonhesapla"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -149,25 +137,58 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
 
-            android:text="İdeal Kilonuz :"
-            android:textColor="@color/siyah"
-            android:textSize="23dp" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
 
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="wrap_content"
+
+                android:text="İdeal Kilonuz :"
+                android:textColor="@color/siyah"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/textViewideal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+
+                android:textColor="@color/siyah"
+                android:textSize="23dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
 
-            android:text="Farkınız :"
-            android:textColor="@color/siyah"
-            android:textSize="23dp" />
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+
+                android:text="Farkınız :"
+                android:textColor="@color/siyah"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/textViewfark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/siyah"
+                android:textSize="23dp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
