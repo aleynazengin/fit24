@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 
 /**
@@ -19,7 +20,9 @@ import android.widget.Button;
  */
 public class spordereceEkran extends Fragment {
     Button bndevam;
-
+    ViewModel userViewModel;
+    RadioButton az,orta,çok;
+    int sporDerece=0;
     public spordereceEkran() {
         // Required empty public constructor
     }
@@ -32,6 +35,9 @@ public class spordereceEkran extends Fragment {
         View view= inflater.inflate(R.layout.fragment_sporderece_ekran, container, false);
 
         bndevam=view.findViewById(R.id.buttondevam3);
+        az=view.findViewById(R.id.radioButton);
+        orta=view.findViewById(R.id.radioButton2);
+        çok=view.findViewById(R.id.radioButton3);
         return view;
     }
 
@@ -39,11 +45,49 @@ public class spordereceEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final NavController navController = Navigation.findNavController(view);
+
+        az.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sporDerece=1;
+            }
+        });
+        orta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sporDerece=2;
+            }
+        });
+        çok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sporDerece=3;
+            }
+        });
+
         bndevam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_spordereceEkran_to_hedefEkran);
+                User users= new User();
+                updateClicked(users);
             }
         });
     }
+    public void updateUsers(final User users){
+
+        bndevam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                users.setReactivity(sporDerece);
+                userViewModel.updateUser(users);
+            }
+        });
+
+    }
+
+    public void updateClicked(User users) {
+        updateUsers(users);
+    }
 }
+

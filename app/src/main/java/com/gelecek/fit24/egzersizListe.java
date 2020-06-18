@@ -29,7 +29,10 @@ public class egzersizListe extends Fragment {
     private EgzersizViewModel mEgzersizViewModel;
     TextView aciklama;
 
+    private int[] images = {R.drawable.isinmaicon,R.drawable.karnicon,R.drawable.dumbbells_exercise__1_,R.drawable.legicon,R.drawable.omuzicon,R.drawable.pilatesicon,R.drawable.yogaicon,R.drawable.isinmaicon};
+
     public static final int NEW_EGZERSIZ_ACTIVITY_REQUEST_CODE = 1;
+
 
     public egzersizListe() {
         // Required empty public constructor

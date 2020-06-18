@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 
 /**
@@ -19,6 +20,9 @@ import android.widget.Button;
  */
 public class hedefEkran extends Fragment {
     Button bitir;
+    CheckBox ver,form,al;
+    int goal=0;
+    ViewModel userViewModel;
 
     public hedefEkran() {
         // Required empty public constructor
@@ -31,6 +35,9 @@ public class hedefEkran extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_hedef_ekran, container, false);
         bitir=view.findViewById(R.id.buttonbitir);
+        ver=view.findViewById(R.id.checkBox);
+        form=view.findViewById(R.id.checkBox2);
+        al=view.findViewById(R.id.checkBox3);
         return  view;
     }
 
@@ -38,11 +45,47 @@ public class hedefEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final NavController navController = Navigation.findNavController(view);
+        ver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            goal=1;
+            }
+        });
+        form.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goal=2;
+            }
+        });
+        al.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goal=3;
+            }
+        });
         bitir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_hedefEkran_to_hosgeldinEkrani);
+                User users= new User();
+                updateClicked(users);
             }
         });
     }
+    public void updateUsers(final User users){
+
+        bitir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                users.setGoal(goal);
+                userViewModel.updateUser(users);
+            }
+        });
+
+    }
+
+    public void updateClicked(User users) {
+        updateUsers(users);
+    }
 }
+

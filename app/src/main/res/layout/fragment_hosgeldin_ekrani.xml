@@ -14,17 +14,12 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:layout_marginBottom="10dp"
-            android:text="HOŞGELDİN"
-            android:textColor="@color/siyah"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/hos" />
 
         <TextView
             android:id="@+id/textView12"
@@ -95,6 +90,7 @@
                 android:layout_marginVertical="10dp"
                 android:layout_marginLeft="10dp"
                 android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="Ekle"
                 android:textColor="#009688"
                 android:textSize="20dp"
@@ -166,6 +162,7 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center"
                 android:text="Kalori Listesi"
                 android:textColor="#009688"

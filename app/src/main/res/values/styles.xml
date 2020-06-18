@@ -22,5 +22,7 @@
     <style name="Button.Holo_Purple" parent="ThemeOverlay.AppCompat">
         <item name="colorAccent">@android:color/holo_purple</item>
     </style>
+    <style name="Splash" parent="Theme.AppCompat.NoActionBar">
+    </style>
 
 </resources>
