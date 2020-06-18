@@ -18,8 +18,9 @@
             android:layout_width="364dp"
             android:layout_height="140dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/vkiicon" />
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/idealicon"
+            tools:srcCompat="@drawable/idealicon" />
 
 
         <TextView
@@ -27,8 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            tools:text="Boyunuz?"
+            android:layout_marginTop="20dp"
+            android:text="Boyunuz?"
             android:textColor="@color/siyah"
             android:textSize="25dp" />
 
@@ -36,9 +37,9 @@
             android:id="@+id/spinner"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/style_spinner"
-            tools:layout_gravity="center" />
+            android:background="@drawable/style_spinner" />
         <TextView
             android:id="@+id/textViewkilo"
             android:layout_width="wrap_content"
@@ -75,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:backgroundTint="#FFFFFF"
             android:text="Devam"
             android:textColor="#009688"
             android:textSize="20dp"

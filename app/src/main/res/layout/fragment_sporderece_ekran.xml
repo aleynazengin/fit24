@@ -16,10 +16,10 @@
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="154dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/dereceicon" />
 
         <TextView
             android:id="@+id/textView7"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="Az Aktif"
-                android:textSize="24sp" />
+                android:textSize="20dp" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Orta"
-                android:textSize="24sp" />
+                android:textSize="20dp" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
@@ -63,7 +63,7 @@
                 android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Çok Aktif"
-                android:textSize="24sp" />
+                android:textSize="20dp" />
         </RadioGroup>
 
         <ProgressBar
@@ -83,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
+            android:backgroundTint="#FFFFFF"
             android:text="Devam"
             android:textColor="#009688"
             android:textSize="20dp"

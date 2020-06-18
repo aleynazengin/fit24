@@ -15,19 +15,19 @@ import java.util.List;
 
 
 public class EgzersizListAdapter extends RecyclerView.Adapter<EgzersizListAdapter.EgzersizViewHolder> {
-  class EgzersizViewHolder extends RecyclerView.ViewHolder{
-      private final ImageView egzImage;
-      private final TextView egzAdi;
+    class EgzersizViewHolder extends RecyclerView.ViewHolder{
+        private final ImageView egzImage;
+        private final TextView egzAdi;
 
 
 
-      private EgzersizViewHolder(View itemView) {
-          super(itemView);
-          egzImage=itemView.findViewById(R.id.egzImage);
-          egzAdi=itemView.findViewById(R.id.egzAdi);
+        private EgzersizViewHolder(View itemView) {
+            super(itemView);
+            egzImage=itemView.findViewById(R.id.egzImage);
+            egzAdi=itemView.findViewById(R.id.egzAdi);
 
-      }
-  }
+        }
+    }
 
     private final LayoutInflater mEInflater;
 
