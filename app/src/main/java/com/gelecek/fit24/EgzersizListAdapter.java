@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 
@@ -49,8 +51,24 @@ public class EgzersizListAdapter extends RecyclerView.Adapter<EgzersizListAdapte
     public void onBindViewHolder(EgzersizViewHolder holder, int position) {
         if (mEgzersiz != null) {
             Egzersiz current = mEgzersiz.get(position);
-            holder.egzImage.setImageDrawable(Drawable.createFromPath("assets/"+current.EgzersizImage));
+
             holder.egzAdi.setText(current.EgzersizAdi);
+
+            try
+            {
+                InputStream ims = holder.itemView.getContext().getAssets().open(current.EgzersizImage);
+
+                Drawable d = Drawable.createFromStream(ims, null);
+                // set image to ImageView
+                holder.egzImage.setImageDrawable(d);
+                ims.close();
+            }
+            catch(IOException ex)
+            {
+
+            }
+
+
 
         } else {
             // Covers the case of data not being ready yet.

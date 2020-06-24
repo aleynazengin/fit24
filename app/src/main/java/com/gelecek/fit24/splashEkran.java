@@ -47,6 +47,7 @@ public class splashEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).hideActionBar();
         final NavController navController = Navigation.findNavController(view);
         new Handler().postDelayed(new Runnable() {
             @Override

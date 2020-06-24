@@ -46,6 +46,8 @@ public class GirisEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).showActionBar();
+
         girisyap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,12 +57,7 @@ public class GirisEkran extends Fragment {
                 if(durum==true) {
 
                     final NavController navController = Navigation.findNavController(view);
-                    girisyap.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            navController.navigate(R.id.action_girisEkran_to_hosgeldinEkrani);
-                        }
-                    });
+                    navController.navigate(R.id.action_girisEkran_to_hosgeldinEkrani);
                 }
             }
         });

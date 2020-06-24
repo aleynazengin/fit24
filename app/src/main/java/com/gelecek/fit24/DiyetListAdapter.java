@@ -41,7 +41,7 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
     }
 
     @Override
-    public void onBindViewHolder(DiyetListAdapter.DiyetViewHolder holder, final int position) {
+    public void onBindViewHolder(final DiyetListAdapter.DiyetViewHolder holder, final int position) {
         if (mDiyet != null) {
             Diyet current = mDiyet.get(position);
             holder.diyetItemView.setText(current.DİyetAdi);
@@ -53,12 +53,18 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         holder.diyetItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentSelectedPosition = position;
+                currentSelectedPosition = holder.getAdapterPosition();
                 notifyDataSetChanged();
             }
         });
         if (currentSelectedPosition == position) {
-            holder.diyetTextView.setVisibility(View.VISIBLE);
+            if (holder.diyetTextView.getVisibility()==View.VISIBLE)
+            {
+                holder.diyetTextView.setVisibility(View.GONE);
+            }
+            else {
+                holder.diyetTextView.setVisibility(View.VISIBLE);
+            }
 
         } else {
             holder.diyetTextView.setVisibility(View.GONE);
