@@ -47,6 +47,7 @@ public class cinsiyetEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
         imgerkek.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,19 +80,11 @@ public class cinsiyetEkran extends Fragment {
             }
         });
     }
-    public void updateUsers(final User users){
 
-        btndevam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                users.setGender(cinsiyet);
-                userViewModel.updateUser(users);
-            }
-        });
-
-    }
 
     public void updateClicked(User users) {
-        updateUsers(users);
+        users.setGender(cinsiyet);
+        userViewModel.updateUser(users);
+
     }
 }
