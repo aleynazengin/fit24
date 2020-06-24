@@ -196,6 +196,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:gravity="bottom|center"
             android:orientation="horizontal">
 
             <Button
@@ -204,7 +205,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Diyet Listesi"
-                android:textColor="#009688"
+                android:textColor="@color/background"
                 android:textStyle="bold" />
 
             <Button
@@ -213,7 +214,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Egzersiz Listesi"
-                android:textColor="#009688"
+                android:textColor="@color/background"
                 android:textStyle="bold" />
 
             <Button
@@ -222,8 +223,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
-                android:text="İdeal Kilo Hesabı"
-                android:textColor="#009688"
+                android:text="İdeal Kilo"
+                android:textColor="@color/background"
                 android:textStyle="bold" />
         </LinearLayout>
 
