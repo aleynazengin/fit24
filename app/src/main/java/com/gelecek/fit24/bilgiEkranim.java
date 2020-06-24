@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -40,7 +41,7 @@ public class bilgiEkranim extends Fragment {
         btndevamet= view.findViewById(R.id.buttondevamet);
         Spinner spinner1=view.findViewById(R.id.spinner);
         Spinner spinner2=view.findViewById(R.id.spinner2);
-        String[]value={"140 cm","141 cm","142 cm","143 cm","144 cm","145 cm","146 cm","147 cm",
+        final String[] value={"140 cm","141 cm","142 cm","143 cm","144 cm","145 cm","146 cm","147 cm",
                 "148 cm","149 cm","150 cm","151 cm","152 cm","153 cm","154 cm","155 cm","156 cm","157 cm","158cm",
                 "159 cm","160 cm","161 cm","162 cm","163 cm","164 cm","165 cm","166 cm","167 cm","168cm",
                 "169 cm","170 cm","171 cm","172 cm","173 cm","174 cm","175 cm","176 cm","177 cm","178cm",
@@ -49,6 +50,18 @@ public class bilgiEkranim extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_dropdown_item,value);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println(position);
+                System.out.println(value[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         String[]value2={"36 kg","37kg","38kg","39kg","40kg","41kg","42kg","43kg","44kg","45kg","46kg",
                 "47kg","48kg","49kg","50kg","51kg","52kg","53kg","54kg","55kg","56kg",
@@ -69,6 +82,7 @@ public class bilgiEkranim extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
         btndevamet.setOnClickListener(new View.OnClickListener() {
             @Override

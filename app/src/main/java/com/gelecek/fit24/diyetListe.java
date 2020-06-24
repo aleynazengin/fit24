@@ -61,24 +61,14 @@ public class diyetListe extends Fragment {
                 adapter.setWords(diyets);
             }
         });
-       /* diyetgetir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (aciklama.getVisibility()!=View.VISIBLE){
-                    aciklama.setVisibility(View.VISIBLE);
-                }
-                else{
-                    aciklama.setVisibility(View.GONE);
-                }
 
-            }
-        }); */
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
         egzersizegit.setOnClickListener(new View.OnClickListener() {
             @Override
