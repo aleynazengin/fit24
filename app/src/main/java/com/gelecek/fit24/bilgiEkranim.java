@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -22,6 +23,9 @@ import android.widget.Spinner;
  */
 public class bilgiEkranim extends Fragment {
     Button btndevamet;
+    ViewModel userViewModel;
+    int boy=0;
+    int kilo=0;
 
     public bilgiEkranim() {
         // Required empty public constructor
@@ -33,6 +37,7 @@ public class bilgiEkranim extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bilgi_ekranim, container, false);
+        userViewModel = ViewModelProviders.of(this).get(ViewModel.class);
         btndevamet= view.findViewById(R.id.buttondevamet);
         Spinner spinner1=view.findViewById(R.id.spinner);
         Spinner spinner2=view.findViewById(R.id.spinner2);
@@ -83,6 +88,7 @@ public class bilgiEkranim extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_bilgiEkranim_to_spordereceEkran);
+
             }
         });
     }

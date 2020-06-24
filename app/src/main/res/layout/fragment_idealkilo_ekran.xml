@@ -18,10 +18,11 @@
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="wrap_content"
-            android:layout_height="167dp"
+            android:layout_height="137dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/calories" />
 
         <TextView
             android:id="@+id/textView20"
@@ -132,6 +133,7 @@
             android:layout_gravity="center"
             android:layout_marginVertical="10dp"
             android:layout_marginTop="25dp"
+            android:backgroundTint="#FFFFFF"
             android:text="HESAPLA"
             android:textColor="#009688"
             android:textSize="20dp"

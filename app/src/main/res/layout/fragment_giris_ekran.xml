@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginVertical="10dp"
+            android:backgroundTint="#FFFFFF"
             android:text="Giriş Yap"
             android:textColor="#009688"
             android:textSize="20dp"
