@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:layout_height="650dp"
     android:layout_marginBottom="4dp"
+    android:orientation="horizontal"
     android:padding="10dp">
 
 
@@ -35,11 +34,64 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00BCD4"
             android:padding="2dp"
+            android:text="Egzersiz Adı"
             android:textColor="@color/siyah"
-            android:textSize="23dp"
-            android:text="Egzersiz Adı"/>
+            android:textSize="23dp" />
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="390dp"
+        android:layout_height="135dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="137dp">
+
+        <ImageView
+            android:id="@+id/egzimg1"
+            android:layout_width="205dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="424dp" />
+
+        <TextView
+            android:id="@+id/egzAciklama1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
+            android:padding="2dp"
+            android:text="Egzersiz Açıklama"
+            android:textColor="@color/siyah"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="390dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="204dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="5dp">
+
+        <ImageView
+            android:id="@+id/egzimg2"
+            android:layout_width="205dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="264dp" />
+
+        <TextView
+            android:id="@+id/egzAciklama2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
+            android:padding="2dp"
+            android:text="Egzersiz Açıklama"
+            android:textColor="@color/siyah"
+            android:textSize="23dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
