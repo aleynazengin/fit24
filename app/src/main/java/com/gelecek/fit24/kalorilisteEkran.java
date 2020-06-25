@@ -63,6 +63,12 @@ public class kalorilisteEkran extends Fragment {
 
      return view;
     }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).showActionBar();
+
+    }
 
 
     }

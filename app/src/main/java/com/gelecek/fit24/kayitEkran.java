@@ -59,7 +59,7 @@ public class kayitEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        ((MainActivity)getActivity()).showActionBar();
         kayitol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

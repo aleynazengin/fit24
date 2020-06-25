@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,17 +76,20 @@ public class cinsiyetEkran extends Fragment {
         btndevam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User users= new User();
-                updateClicked(users);
+                AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+                final UserDao userDao = database.userDao();
+
+                User user= userDao.getSonUser();
+                updateClicked(user);
                 navController.navigate(R.id.action_cinsiyetEkran_to_bilgiEkranim);
             }
         });
     }
 
 
-    public void updateClicked(User users) {
-        users.setGender(cinsiyet);
-        userViewModel.updateUser(users);
+    public void updateClicked(User user) {
+        user.setGender(cinsiyet);
+        userViewModel.updateUser(user);
 
     }
 }

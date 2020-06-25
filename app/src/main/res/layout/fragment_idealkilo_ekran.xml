@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="wrap_content"
-            android:layout_height="137dp"
+            android:layout_height="110dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
@@ -201,31 +201,33 @@
 
             <Button
                 android:id="@+id/buttondiyet2"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Diyet Listesi"
-                android:textColor="@color/background"
-                android:textStyle="bold" />
+
+                android:textStyle="bold"
+                android:textColor="#009688"/>
 
             <Button
                 android:id="@+id/buttonegzersiz2"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Egzersiz Listesi"
-                android:textColor="@color/background"
+                android:textColor="#009688"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonideal2"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:text="İdeal Kilo"
-                android:textColor="@color/background"
-                android:textStyle="bold" />
+                android:textColor="#009688"
+                android:textStyle="bold"
+                />
         </LinearLayout>
 
     </LinearLayout>
