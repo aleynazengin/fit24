@@ -20,7 +20,7 @@ public interface UserDao {
     @Query("SELECT * FROM User WHERE UserId= ( SELECT MAX(UserId) FROM User)")
     User getSonUser();
 
-    @Query("SELECT * FROM User WHERE Email LIKE '%' || :email || '%' AND Password LIKE '%' || :sifre || '%'")
+    @Query("SELECT * FROM User WHERE Email LIKE  :email   AND Password LIKE '%' || :sifre || '%'")
     List<User> getLoginSorgum(String email,String sifre);
 
     @Insert

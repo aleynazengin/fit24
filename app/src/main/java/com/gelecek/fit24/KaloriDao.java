@@ -19,6 +19,9 @@ public interface KaloriDao {
     @Query("SELECT * FROM Kalori WHERE YemekAdi LIKE '%' || :sorgu || '%'")
     List<Kalori> getSorgu(String sorgu);
 
+    @Query("SELECT * FROM Kalori WHERE YemekAdi LIKE '%' || :sorgu || '%'")
+    Kalori getKalorim(String sorgu);
+
     @Insert
     void save(Kalori kalori);
 }
