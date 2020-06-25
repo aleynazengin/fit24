@@ -48,4 +48,54 @@ public class Tuketim {
     @ColumnInfo(name = "KaloriYemekAdi")
     @NonNull
     public String KaloriYemekAdi;
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(int userId) {
+        UserId = userId;
+    }
+
+    public int getKaloriId() {
+        return KaloriId;
+    }
+
+    public void setKaloriId(int kaloriId) {
+        KaloriId = kaloriId;
+    }
+
+    public int getKalorisi() {
+        return Kalorisi;
+    }
+
+    public void setKalorisi(int kalorisi) {
+        Kalorisi = kalorisi;
+    }
+
+    @NonNull
+    public String getTarih() {
+        return Tarih;
+    }
+
+    public void setTarih(@NonNull String tarih) {
+        Tarih = tarih;
+    }
+
+    public int getOgun() {
+        return Ogun;
+    }
+
+    public void setOgun(int ogun) {
+        Ogun = ogun;
+    }
+
+    @NonNull
+    public String getKaloriYemekAdi() {
+        return KaloriYemekAdi;
+    }
+
+    public void setKaloriYemekAdi(@NonNull String kaloriYemekAdi) {
+        KaloriYemekAdi = kaloriYemekAdi;
+    }
 }

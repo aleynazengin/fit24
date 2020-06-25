@@ -9,7 +9,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Kalori.class,Tuketim.class,Egzersiz.class,Diyet.class}, exportSchema = false, version = 6)
+@Database(entities = {User.class, Kalori.class,Tuketim.class,Egzersiz.class,Diyet.class}, exportSchema = false, version = 7)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
 

@@ -12,5 +12,5 @@ public interface TuketimDao {
     LiveData<List<Tuketim>> getTuketim();
 
     @Insert
-    void save(Tuketim tuketim);
+    void insertTuketimler(Tuketim tuketim);
 }

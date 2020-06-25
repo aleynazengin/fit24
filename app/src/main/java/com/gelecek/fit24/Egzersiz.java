@@ -27,7 +27,6 @@ public class Egzersiz {
     public String EgzersizAdi;
 
     @ColumnInfo(name = "EgzersizImage")
-
     public String EgzersizImage;
 
     @ColumnInfo(name = "EgzersizAciklama")
@@ -37,4 +36,10 @@ public class Egzersiz {
     @ColumnInfo(name = "EgzersizKalorisi")
     @NonNull
     public int EgzersizKalorisi = 0;
+
+    @ColumnInfo(name = "Image1")
+    public String Image1;
+
+    @ColumnInfo(name = "Image2")
+    public String Image2;
 }
