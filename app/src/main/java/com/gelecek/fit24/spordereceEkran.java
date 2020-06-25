@@ -44,6 +44,7 @@ public class spordereceEkran extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
 
         az.setOnClickListener(new View.OnClickListener() {
@@ -68,26 +69,19 @@ public class spordereceEkran extends Fragment {
         bndevam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+                final UserDao userDao = database.userDao();
+                User user= userDao.getSonUser();
+                updateClicked(user);
                 navController.navigate(R.id.action_spordereceEkran_to_hedefEkran);
-                User users= new User();
-                updateClicked(users);
+
             }
         });
     }
-    public void updateUsers(final User users){
+    public void updateClicked(User user) {
+        user.setReactivity(sporDerece);
+        userViewModel.updateUser(user);
 
-        bndevam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                users.setReactivity(sporDerece);
-                userViewModel.updateUser(users);
-            }
-        });
-
-    }
-
-    public void updateClicked(User users) {
-        updateUsers(users);
     }
 }
 

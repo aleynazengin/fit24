@@ -67,26 +67,19 @@ public class hedefEkran extends Fragment {
         bitir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+                final UserDao userDao = database.userDao();
+                User user= userDao.getSonUser();
+                updateClicked(user);
                 navController.navigate(R.id.action_hedefEkran_to_hosgeldinEkrani);
-                User users= new User();
-                updateClicked(users);
+
             }
         });
     }
-    public void updateUsers(final User users){
-
-        bitir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                users.setGoal(goal);
-                userViewModel.updateUser(users);
-            }
-        });
-
-    }
-
     public void updateClicked(User users) {
-        updateUsers(users);
+        users.setGoal(goal);
+        userViewModel.updateUser(users);
+
     }
 }
 

@@ -75,7 +75,7 @@
             </SearchView>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonekle"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,31 +170,31 @@
 
             <Button
                 android:id="@+id/buttondiyet"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Diyet Listesi"
-                android:textColor="@color/background"
+                android:textColor="#009688"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonegzersiz"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Egzersiz Listesi"
-                android:textColor="@color/background"
+                android:textColor="#009688"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonideal"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:text="İdeal Kilo"
-                android:textColor="@color/background"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#009688"/>
         </LinearLayout>
 
     </LinearLayout>

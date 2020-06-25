@@ -23,7 +23,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class hosgeldinEkrani extends Fragment {
-    Button egzersizegit,idealsayfasinagit,diyetegit,butonkalori;
+    Button egzersizegit,idealsayfasinagit,diyetegit,butonkalori,btnekle;
     AutoCompleteTextView autotext;
     private KaloriViewModel mKaloriViewModel;
     public static final int NEW_KALORI_ACTIVITY_REQUEST_CODE = 1;
@@ -41,7 +41,7 @@ public class hosgeldinEkrani extends Fragment {
         View view= inflater.inflate(R.layout.fragment_hosgeldin_ekrani, container, false);
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
         final KaloriDao kaloriDao = database.kaloriDao();
-
+        btnekle=view.findViewById(R.id.buttonekle);
         egzersizegit=view.findViewById(R.id.buttonegzersiz);
         idealsayfasinagit=view.findViewById(R.id.buttonideal);
         diyetegit=view.findViewById(R.id.buttondiyet);
@@ -68,6 +68,12 @@ public class hosgeldinEkrani extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
+        btnekle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         egzersizegit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
