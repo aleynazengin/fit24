@@ -8,4 +8,6 @@
     <color name="text">#673AB7</color>
     <color name="siyah">#000000</color>
     <color name="gray">#FF9E9E9E</color>
+    <color name="toolbarTransparent">#00FFFFFF</color>
+
 </resources>
