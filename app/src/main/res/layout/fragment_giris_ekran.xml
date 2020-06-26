@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="E-mail"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:text="berra@gmail.com"/>
 
 
         <EditText
@@ -37,7 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Şifre"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="123"/>
 
 
         <Button

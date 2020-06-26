@@ -17,6 +17,12 @@ public interface EgzersizDao {
     @Query("SELECT * FROM Egzersiz EgzersizImage")
     LiveData<List<Egzersiz>> getEgzersizImage();
 
+    @Query("SELECT * FROM Egzersiz Image1")
+    LiveData<List<Egzersiz>> getImage1();
+
+    @Query("SELECT * FROM Egzersiz Image2")
+    LiveData<List<Egzersiz>> getImage2();
+
     @Query("SELECT * FROM Egzersiz EgzersizAciklama")
     LiveData<List<Egzersiz>> getEgzersizAciklama();
 

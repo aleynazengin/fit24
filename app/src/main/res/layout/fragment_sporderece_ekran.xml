@@ -39,9 +39,8 @@
                 android:id="@+id/radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="25dp"
-                android:gravity="center"
                 android:text="Az Aktif"
                 android:textSize="20dp" />
 
@@ -49,9 +48,8 @@
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="15dp"
-                android:gravity="center"
                 android:text="Orta"
                 android:textSize="20dp" />
 
@@ -59,9 +57,8 @@
                 android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="15dp"
-                android:gravity="center"
                 android:text="Çok Aktif"
                 android:textSize="20dp" />
         </RadioGroup>
