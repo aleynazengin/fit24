@@ -32,11 +32,12 @@
             android:textSize="25dp" />
 
         <RadioGroup
+            android:id="@+id/rdSpor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButtonaz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
@@ -45,7 +46,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButtonorta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
@@ -54,7 +55,7 @@
                 android:textSize="20dp" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioButtoncok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"

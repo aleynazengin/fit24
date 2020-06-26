@@ -40,7 +40,7 @@ public class idealkiloEkran extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_idealkilo_ekran, container, false);
+        final View view= inflater.inflate(R.layout.fragment_idealkilo_ekran, container, false);
         egzersizegit=view.findViewById(R.id.buttonegzersiz2);
         idealsayfasinagit=view.findViewById(R.id.buttonideal2);
         diyetegit=view.findViewById(R.id.buttondiyet2);
@@ -50,26 +50,29 @@ public class idealkiloEkran extends Fragment {
         radioGroup = view.findViewById(R.id.rdgrup);
         txtideal=view.findViewById(R.id.textViewideal);
         txtfark = view.findViewById(R.id.textViewfark);
+
         btnhesapla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = radioGroup.findViewById(selectedId);
                 value=editTextkilo.getText().toString();
                 kilo =Integer.parseInt(value);
                 value2=editTextboy.getText().toString();
                 boy =Integer.parseInt(value2);
-                int selectedId = radioGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
-                radioButton = v.findViewById(selectedId);
-                if (radioButton.getText()=="Kadın"){
+                if (selectedId==R.id.radioButtonkadın){
                     idealkilo= 45.5 + (2.3 / 2.54)*(boy - 152.4);
                 }
-                if (radioButton.getText()=="Erkek"){
+                if (selectedId==R.id.radioButtonerkek){
                     idealkilo=50 + (2.3 / 2.54)*(boy - 152.4);
                 }
-                txtideal.setText(idealkilo+"");
+                int idealkilom=(int)idealkilo;
+                txtideal.setText(idealkilom+"");
                 fark= idealkilo-kilo;
-                txtfark.setText(""+fark);
+                int farkım=(int)fark;
+                txtfark.setText(""+farkım);
 
             }
         });

@@ -41,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="start|top"
+                    android:text="Ad"
                     android:hint="Ad"
                     android:inputType="textMultiLine"
                     android:textColorHighlight="#251919" />
@@ -58,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:text="Soyad"
                     android:hint="Soyad"
                     android:inputType="textPersonName" />
 
@@ -74,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:text="a@g.com"
                     android:hint="E-posta"
                     android:inputType="textEmailAddress" />
 
@@ -101,6 +104,7 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="Şifre"
+                        android:text="123456"
                         android:inputType="textPassword" />
 
                 </LinearLayout>

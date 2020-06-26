@@ -112,15 +112,18 @@
                 android:textColor="@color/siyah"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/editTextToplam"
+            <TextView
+                android:id="@+id/textViewtoplam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="0 kcal" />
+                android:gravity="center"
+                android:text="0 kcal"
+                android:textColor="@color/siyah"
+                android:textSize="20dp"
+
+                android:ems="10"/>
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -137,15 +140,18 @@
                 android:textColor="@color/siyah"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/editText9"
+            <TextView
+                android:id="@+id/textViewhedef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="0 kcal" />
+                android:gravity="center"
+                android:text="0 kcal"
+                android:textColor="@color/siyah"
+                android:textSize="20dp"
+
+                android:ems="10"/>
+
+
 
         </LinearLayout>
 

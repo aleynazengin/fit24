@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -34,6 +35,7 @@ public class hedefEkran extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_hedef_ekran, container, false);
+        userViewModel = ViewModelProviders.of(this).get(ViewModel.class);
         bitir=view.findViewById(R.id.buttonbitir);
         ver=view.findViewById(R.id.checkBox);
         form=view.findViewById(R.id.checkBox2);
