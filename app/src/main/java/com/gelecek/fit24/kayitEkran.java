@@ -134,7 +134,10 @@ public class kayitEkran extends Fragment {
         final UserDao userDao = database.userDao();
         List<User> users1 = userDao.getSorgum(eposta.getText().toString());
        if (users1.size()>0){
+           Toast t = Toast.makeText(getActivity(), "Bu e-posta daha önceden kullanılmış!", Toast.LENGTH_SHORT);
+           t.show();
            durum2=false;
+
        }
        else{
            durum2=true;
