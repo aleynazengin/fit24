@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/fragment_diyet_liste">
+
+    <fragment android:label="Diyet Liste"
+        android:id="@+id/diyetListe"
+        android:name="com.gelecek.fit24.diyetListe"
+        tools:layout="@layout/fragment_diyet_liste"/>
+
+    <fragment android:label="Egzersiz Liste"
+        android:id="@+id/egzersizListe"
+        android:name="com.gelecek.fit24.egzersizListe"
+        tools:layout="@layout/fragment_egzersiz_liste"/>
+
+    <fragment android:label="Anasayfa"
+        android:id="@+id/hosgeldinEkrani"
+        android:name="com.gelecek.fit24.hosgeldinEkrani"
+        tools:layout="@layout/fragment_hosgeldin_ekrani"/>
+
+    <fragment android:label="İdeal Kilo"
+        android:id="@+id/idealkiloEkran"
+        android:name="com.gelecek.fit24.idealkiloEkran"
+        tools:layout="@layout/fragment_idealkilo_ekran"/>
+
+    <fragment android:label="Ayarlar"
+        android:id="@+id/ayarlarFragment"
+        android:name="com.gelecek.fit24.ayarlarFragment"
+        tools:layout="@layout/fragment_ayarlar"/>
+</navigation>

@@ -51,6 +51,8 @@ public class idealkiloEkran extends Fragment {
         txtideal=view.findViewById(R.id.textViewideal);
         txtfark = view.findViewById(R.id.textViewfark);
 
+
+
         btnhesapla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -20,10 +23,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -38,6 +44,8 @@ public class hosgeldinEkrani extends Fragment {
     boolean durum=false;
     int gunluk_kalori;
     String secilenYemek="";
+
+
     public hosgeldinEkrani() {
 
         // Required empty public constructor
@@ -49,6 +57,12 @@ public class hosgeldinEkrani extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_hosgeldin_ekrani, container, false);
+
+        BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.diyetListe, R.id.egzersizListe, R.id.hosgeldinEkrani,R.id.idealkiloEkran,R.id.ayarlarFragment,R.id.fragment_diyet_liste)
+                .build();
+
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
         final KaloriDao kaloriDao = database.kaloriDao();
         btnekle=view.findViewById(R.id.buttonekle);
@@ -141,6 +155,8 @@ public class hosgeldinEkrani extends Fragment {
                 navController.navigate(R.id.action_hosgeldinEkrani_to_kalorilisteEkran);
             }
         });
+
+
     }
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();

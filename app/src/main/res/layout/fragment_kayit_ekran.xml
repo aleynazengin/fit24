@@ -12,7 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/shutterstock_image__1_">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,15 +22,12 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp">
 
-
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
-                app:srcCompat="@drawable/logo" />
-
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/login_icon" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -38,11 +36,14 @@
                 <EditText
                     android:id="@+id/editTextadı"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="start|top"
                     android:text="Ad"
                     android:hint="Ad"
+                    android:textStyle="bold"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#2503A9F4"
                     android:inputType="textMultiLine"
                     android:textColorHighlight="#251919" />
 
@@ -56,11 +57,14 @@
                 <EditText
                     android:id="@+id/editTextsoyadı"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:textStyle="bold"
                     android:text="Soyad"
                     android:hint="Soyad"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#2503A9F4"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -73,11 +77,14 @@
                 <EditText
                     android:id="@+id/editTextepostası"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:text="a@g.com"
                     android:hint="E-posta"
+                    android:textStyle="bold"
+                    android:background="#2503A9F4"
                     android:inputType="textEmailAddress" />
 
             </LinearLayout>
@@ -100,11 +107,14 @@
                     <EditText
                         android:id="@+id/editTextsifresi"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="Şifre"
                         android:text="123456"
+                        android:textStyle="bold"
+                        android:background="#2503A9F4"
                         android:inputType="textPassword" />
 
                 </LinearLayout>
@@ -119,9 +129,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginVertical="10dp"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="#BF03A9F4"
                 android:text="Kayıt Ol"
-                android:textColor="#009688"
+                android:textColor="#E7FAF8"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 

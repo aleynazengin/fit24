@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Diyet Liste"
+        android:id="@id/diyetListe"
+        android:icon="@drawable/ic_diyet"/>
+
+    <item android:title="Egzersiz Liste"
+        android:id="@+id/egzersizListe"
+        android:icon="@drawable/ic_egzersiz"/>
+
+    <item android:title="Anasayfa"
+        android:id="@+id/hosgeldinEkrani"
+        android:icon="@drawable/ic_hosgeldin"/>
+
+    <item android:title="İdeal Kilo"
+        android:id="@+id/idealkiloEkran"
+        android:icon="@drawable/ic_idealkilo"/>
+
+    <item android:title="Ayarlar"
+        android:id="@+id/ayarlarFragment"
+        android:icon="@drawable/ic_ayarlar"/>
+</menu>
