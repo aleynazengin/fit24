@@ -43,7 +43,8 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="25dp"
                 android:text="Az Aktif"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:buttonTint="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/radioButtonorta"
@@ -52,7 +53,8 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="15dp"
                 android:text="Orta"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:buttonTint="@color/colorPrimaryDark"/>
 
             <RadioButton
                 android:id="@+id/radioButtoncok"
@@ -61,7 +63,8 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="15dp"
                 android:text="Çok Aktif"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:buttonTint="@color/colorPrimaryDark"/>
         </RadioGroup>
 
         <ProgressBar

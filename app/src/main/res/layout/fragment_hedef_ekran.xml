@@ -34,7 +34,8 @@
             android:layout_marginTop="30dp"
             android:text="Hedefiniz nedir?"
             android:textColor="@color/siyah"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            />
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -44,7 +45,8 @@
             android:layout_marginTop="20sp"
             android:checked="false"
             android:text="Kilo almak istiyorum"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:buttonTint="@color/colorPrimaryDark"/>
 
         <CheckBox
             android:id="@+id/checkBox2"
@@ -54,7 +56,8 @@
             android:layout_marginLeft="90dp"
             android:layout_marginTop="10dp"
             android:text="Formda kalmak istiyorum"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:buttonTint="@color/colorPrimaryDark"/>
 
         <CheckBox
             android:id="@+id/checkBox3"
@@ -63,7 +66,8 @@
             android:layout_marginLeft="90dp"
             android:layout_marginTop="10dp"
             android:text="Kilo vermek istiyorum"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:buttonTint="@color/colorPrimaryDark"/>
 
         <ProgressBar
             android:id="@+id/progressBar"

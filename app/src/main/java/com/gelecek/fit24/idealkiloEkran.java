@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -29,7 +31,9 @@ public class idealkiloEkran extends Fragment {
     int boy=0,kilo=0;
     double idealkilo=0,fark=0;
     TextView txtideal,txtfark;
+    int selectedId=0;
     String value, value2;
+    boolean durum=false;
 
     public idealkiloEkran() {
         // Required empty public constructor
@@ -56,26 +60,30 @@ public class idealkiloEkran extends Fragment {
         btnhesapla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selectedId = radioGroup.getCheckedRadioButtonId();
+                selectedId = radioGroup.getCheckedRadioButtonId();
                 radioButton = radioGroup.findViewById(selectedId);
-                value=editTextkilo.getText().toString();
-                kilo =Integer.parseInt(value);
-                value2=editTextboy.getText().toString();
-                boy =Integer.parseInt(value2);
+                checkDataEntered();
+                if(durum==true) {
 
-                // find the radiobutton by returned id
-                if (selectedId==R.id.radioButtonkadın){
-                    idealkilo= 45.5 + (2.3 / 2.54)*(boy - 152.4);
-                }
-                if (selectedId==R.id.radioButtonerkek){
-                    idealkilo=50 + (2.3 / 2.54)*(boy - 152.4);
-                }
-                int idealkilom=(int)idealkilo;
-                txtideal.setText(idealkilom+"");
-                fark= idealkilo-kilo;
-                int farkım=(int)fark;
-                txtfark.setText(""+farkım);
 
+                    value = editTextkilo.getText().toString();
+                    kilo = Integer.parseInt(value);
+                    value2 = editTextboy.getText().toString();
+                    boy = Integer.parseInt(value2);
+
+                    // find the radiobutton by returned id
+                    if (selectedId == R.id.radioButtonkadın) {
+                        idealkilo = 45.5 + (2.3 / 2.54) * (boy - 152.4);
+                    }
+                    if (selectedId == R.id.radioButtonerkek) {
+                        idealkilo = 50 + (2.3 / 2.54) * (boy - 152.4);
+                    }
+                    int idealkilom = (int) idealkilo;
+                    txtideal.setText(idealkilom + "");
+                    fark = idealkilo - kilo;
+                    int farkım = (int) fark;
+                    txtfark.setText("" + farkım);
+                }
             }
         });
 
@@ -105,5 +113,28 @@ public class idealkiloEkran extends Fragment {
                 navController.navigate(R.id.action_idealkiloEkran_to_diyetListe);
             }
         });
+    }
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
+
+    void checkDataEntered(){
+        if (isEmpty(editTextboy)) {
+            Toast t = Toast.makeText(getActivity(), "Boyunuzu yazınız!", Toast.LENGTH_SHORT);
+            t.show();
+        }
+        else if (isEmpty(editTextkilo)) {
+            Toast t = Toast.makeText(getActivity(), "Kilonuzu yazınız!", Toast.LENGTH_SHORT);
+            t.show();
+        }
+        else if (selectedId==-1) {
+            Toast t = Toast.makeText(getActivity(), "Cinsiyet seçiniz!", Toast.LENGTH_SHORT);
+            t.show();
+        }
+
+        else{
+            durum=true;
+        }
     }
 }

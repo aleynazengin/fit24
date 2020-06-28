@@ -7,6 +7,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.DiyetViewHolder>{
@@ -15,18 +19,18 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         private final TextView diyetTextView;
 
 
+
         private DiyetViewHolder(View itemView) {
             super(itemView);
             diyetItemView = itemView.findViewById(R.id.buttondiyetgetir);
             diyetTextView = itemView.findViewById(R.id.textViewdiyetitem);
         }
     }
-
     private int currentSelectedPosition = RecyclerView.NO_POSITION;
     private final LayoutInflater mInflater;
 
     private List<Diyet> mDiyet;
-
+    private List<Boolean>showList;
     DiyetListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
@@ -44,6 +48,7 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
             Diyet current = mDiyet.get(position);
             holder.diyetItemView.setText(current.DİyetAdi);
             holder.diyetTextView.setText(current.DiyetAciklama + "");
+
         } else {
             // Covers the case of data not being ready yet.
             holder.diyetItemView.setText("Not found");
@@ -51,26 +56,33 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         holder.diyetItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentSelectedPosition = holder.getAdapterPosition();
+                for (int i=0;i>showList.size();i++){
+                   if (showList.get(i) ==true){
+                       Collections.fill(showList, Boolean.FALSE);
+                   }
+                }
+                Boolean isSelected =showList.get(position);
+                Boolean isSelectednot= !isSelected;
+                showList.set(position, isSelectednot);
                 notifyDataSetChanged();
             }
-        });
-        if (currentSelectedPosition == position) {
-            if (holder.diyetTextView.getVisibility()==View.VISIBLE)
-            {
-                holder.diyetTextView.setVisibility(View.GONE);
-            }
-            else {
-                holder.diyetTextView.setVisibility(View.VISIBLE);
-            }
 
-        } else {
+        });
+
+        if (showList.get(position)){
+
+            holder.diyetTextView.setVisibility(View.VISIBLE);
+        }
+        else {
             holder.diyetTextView.setVisibility(View.GONE);
         }
     }
 
     void setWords(List<Diyet> diyets) {
         mDiyet = diyets;
+        showList=new ArrayList<Boolean>(Arrays.asList(new Boolean[mDiyet.size()]));
+        Collections.fill(showList, Boolean.FALSE);
+
         notifyDataSetChanged();
     }
 

@@ -34,6 +34,7 @@
 
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
+            android:id="@+id/tablayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:background="#BBA5E1"
@@ -43,23 +44,27 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sabah" />
+                android:text="Sabah"
+                android:id="@+id/tabItemSabah"/>
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="öğle" />
+                android:text="öğle"
+                android:id="@+id/tabItemOgle"/>
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="akşam" />
+                android:text="akşam"
+                android:id="@+id/tabItemAksam"/>
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabItem"
+                android:id="@+id/tabItemAraOgun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ara öğün" />
+                android:text="ara öğün"
+                />
         </com.google.android.material.tabs.TabLayout>
 
         <LinearLayout

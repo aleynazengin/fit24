@@ -14,7 +14,7 @@ public interface UserDao {
     @Query("SELECT * FROM User")
     LiveData<List<User>> getUsers();
 
-    @Query("SELECT * FROM User WHERE Email LIKE '%' || :sorgu || '%'")
+    @Query("SELECT * FROM User WHERE Email LIKE :sorgu ")
     List<User> getSorgum(String sorgu);
 
     @Query("SELECT * FROM User WHERE UserId= ( SELECT MAX(UserId) FROM User)")

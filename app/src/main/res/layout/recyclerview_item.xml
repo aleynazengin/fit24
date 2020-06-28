@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
-    android:background="@android:color/holo_orange_light"
+    android:background="@android:color/holo_purple"
     android:orientation="horizontal"
     android:padding="16dp">
 
@@ -27,5 +27,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="32" />
+        tools:text="32"
+        android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
