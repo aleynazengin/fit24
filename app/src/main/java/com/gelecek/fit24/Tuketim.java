@@ -18,8 +18,9 @@ import androidx.room.PrimaryKey;
                 parentColumns = "KaloriId",
                 childColumns = "KaloriId"
         )})
+
 public class Tuketim {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "TuketimId")
     @NonNull
     public int TuketimId = 0;

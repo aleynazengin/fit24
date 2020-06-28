@@ -65,7 +65,6 @@ public class idealkiloEkran extends Fragment {
                 checkDataEntered();
                 if(durum==true) {
 
-
                     value = editTextkilo.getText().toString();
                     kilo = Integer.parseInt(value);
                     value2 = editTextboy.getText().toString();

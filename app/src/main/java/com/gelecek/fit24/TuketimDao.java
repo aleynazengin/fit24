@@ -12,6 +12,6 @@ public interface TuketimDao {
     @Query("SELECT * FROM Tuketim")
     LiveData<List<Tuketim>> getTuketim();
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     void insertTuketimler(Tuketim tuketim);
 }
