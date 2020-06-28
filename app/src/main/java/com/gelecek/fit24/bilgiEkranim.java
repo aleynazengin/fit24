@@ -91,7 +91,8 @@ public class bilgiEkranim extends Fragment {
 
                 String agirlik= weightvalue[position];
                 String agirlikNoKg= agirlik.replace("kg","");
-                kilo= Integer.parseInt(agirlikNoKg);
+                //Yukarıdaki değişkenleri int olarak almak için kg yazısını boşluk ile değiştir
+                kilo= Integer.parseInt(agirlikNoKg); //int çevir
             }
 
             @Override
@@ -106,7 +107,7 @@ public class bilgiEkranim extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Üye Bilgileri");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Üye Bilgileri"); //Toolbar ismi
         final NavController navController = Navigation.findNavController(view);
 
 
@@ -115,19 +116,18 @@ public class bilgiEkranim extends Fragment {
             public void onClick(View v) {
                 checkDataEntered();
                 if(durum==true) {
-
                     value = age.getText().toString();
                     yas = Integer.parseInt(value);
                     AppDatabase database = ((FitApplication) getActivity().getApplication()).getAppDatabase();
                     final UserDao userDao = database.userDao();
-                    User user = userDao.getSonUser();
+                    User user = userDao.getSonUser(); //Son kaydedilen userı updatele
                     updateClicked(user);
                     navController.navigate(R.id.action_bilgiEkranim_to_spordereceEkran);
                 }
             }
         });
     }
-    public void updateClicked(User user) {
+    public void updateClicked(User user) { //Update işlemleri
         user.setHeight(boy);
         user.setWeight(kilo);
         user.setAge(yas);
@@ -142,7 +142,6 @@ public class bilgiEkranim extends Fragment {
         if (isEmpty(age)) {
             Toast t = Toast.makeText(getActivity(), "Lütfen yaşınızı giriniz!", Toast.LENGTH_SHORT);
             t.show();
-
         }
         else{
             durum=true;
