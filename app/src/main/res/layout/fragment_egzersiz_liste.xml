@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigation"
         app:itemBackground="@color/colorPrimary"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@color/background"
+        app:itemIconTint="@color/background"
         app:menu="@menu/menu_navigation"
+        app:navGraph="@navigation/mobile_navigation"
         android:layout_alignParentBottom="true"/>
-
 
 </RelativeLayout>

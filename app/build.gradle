@@ -48,6 +48,12 @@ dependencies {
     def coreTestingVersion="2.1.0"
     def materialVersion="1.0.0"
 
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha04'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha04'
+
+    apply plugin: 'androidx.navigation.safeargs'
+
+
     implementation "androidx.lifecycle:lifecycle-extensions:$arc_Lifecycleversion"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$arc_Lifecycleversion"
     // Java language implementation

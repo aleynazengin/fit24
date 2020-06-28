@@ -4,11 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +20,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -44,10 +49,10 @@ public class egzersizListe extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_egzersiz_liste, container, false);
-        egzersizegit = view.findViewById(R.id.buttonegzersiz);
-        idealsayfasinagit = view.findViewById(R.id.buttonideal);
-        diyetegit = view.findViewById(R.id.buttondiyet);
-        butonkalori=view.findViewById(R.id.buttonkalori);
+
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
+        NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Egzersiz Listeleri");
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview3);
         final EgzersizListAdapter adapter = new EgzersizListAdapter(getActivity());

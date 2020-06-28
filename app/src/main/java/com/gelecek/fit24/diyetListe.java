@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -40,6 +44,10 @@ public class diyetListe extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_diyet_liste, container, false);
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
+
+        NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
+
         egzersizegit=view.findViewById(R.id.buttonegzersiz3);
         idealsayfasinagit=view.findViewById(R.id.buttonideal3);
         diyetegit=view.findViewById(R.id.buttondiyet3);
@@ -69,6 +77,8 @@ public class diyetListe extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Diyet Listeleri");
+
         final NavController navController = Navigation.findNavController(view);
         egzersizegit.setOnClickListener(new View.OnClickListener() {
             @Override

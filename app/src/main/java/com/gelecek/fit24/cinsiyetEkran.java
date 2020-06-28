@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -51,6 +52,8 @@ public class cinsiyetEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Üye Bilgileri");
+
         final NavController navController = Navigation.findNavController(view);
         imgerkek.setOnClickListener(new View.OnClickListener() {
             @Override

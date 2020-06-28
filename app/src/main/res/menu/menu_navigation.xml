@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Diyet Liste"
+    <item android:title="Kalori Listesi"
+        android:id="@+id/kalorilisteEkran"
+        android:icon="@drawable/ic_baseline_fastfood_24"
+        />
+
+    <item android:title="Diyet Listeleri"
         android:id="@id/diyetListe"
         android:icon="@drawable/ic_diyet"/>
-
-    <item android:title="Egzersiz Liste"
-        android:id="@+id/egzersizListe"
-        android:icon="@drawable/ic_egzersiz"/>
 
     <item android:title="Anasayfa"
         android:id="@+id/hosgeldinEkrani"
         android:icon="@drawable/ic_hosgeldin"/>
 
-    <item android:title="İdeal Kilo"
+    <item android:title="Egzersiz Listeleri"
+        android:id="@+id/egzersizListe"
+        android:icon="@drawable/ic_egzersiz"/>
+
+    <item android:title="İdeal Kilo Hesaplama"
         android:id="@+id/idealkiloEkran"
         android:icon="@drawable/ic_idealkilo"/>
 
-    <item android:title="Ayarlar"
-        android:id="@+id/ayarlarFragment"
-        android:icon="@drawable/ic_ayarlar"/>
+
 </menu>
