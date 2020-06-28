@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,7 +45,8 @@ public class hosgeldinEkrani extends Fragment {
     boolean durum=false;
     int gunluk_kalori;
     String secilenYemek="";
-
+    TabLayout tabLayout;
+    int ogun=0;
 
     public hosgeldinEkrani() {
 
@@ -73,7 +75,7 @@ public class hosgeldinEkrani extends Fragment {
         autotext=view.findViewById(R.id.autoCompleteTextView);
         txthedef = view.findViewById(R.id.textViewhedef);
         txttoplam=view.findViewById(R.id.textViewtoplam);
-
+        tabLayout=view.findViewById(R.id.tablayout);
         List<String> arrList = new ArrayList<String>();
         List<Kalori> kaloriler = kaloriDao.getSorgu(autotext.getText().toString());
         for (int x = 0; x < kaloriler.size(); x++){
@@ -92,6 +94,7 @@ public class hosgeldinEkrani extends Fragment {
                 secilenYemek= ((TextView)view).getText().toString();
             }
         });
+
         return view;
     }
 
@@ -100,6 +103,30 @@ public class hosgeldinEkrani extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    ogun=1;
+                }
+                if (tab.getPosition() == 1) {
+                    ogun=2;
+                }
+                if (tab.getPosition() == 2) {
+                    ogun=3;
+                }
+                if (tab.getPosition() == 3) {
+                    ogun=4;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
         btnekle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +145,7 @@ public class hosgeldinEkrani extends Fragment {
                     tuketim.setKaloriId(gelenkalori.KaloriId);
                     tuketim.setKalorisi(gelenkalori.Kalorisi);
                     tuketim.setTarih(strDate);
-                    tuketim.setOgun(1);
+                    tuketim.setOgun(ogun);
                     tuketim.setKaloriYemekAdi(gelenkalori.YemekAdi);
                     tuketimDao.insertTuketimler(tuketim);
 
@@ -165,7 +192,11 @@ public class hosgeldinEkrani extends Fragment {
 
     void checkDataEntered(){
         if (isEmpty(autotext)) {
-            Toast t = Toast.makeText(getActivity(), "Önce yemek seçiniz!", Toast.LENGTH_SHORT);
+            Toast t = Toast.makeText(getActivity(), "Lütfen yemek seçiniz!", Toast.LENGTH_SHORT);
+            t.show();
+        }
+        if (ogun==0) {
+            Toast t = Toast.makeText(getActivity(), "Lütfen yemek vakiti seçiniz!", Toast.LENGTH_SHORT);
             t.show();
         }
         else{

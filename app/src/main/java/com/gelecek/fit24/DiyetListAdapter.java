@@ -56,23 +56,22 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         holder.diyetItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentSelectedPosition = holder.getAdapterPosition();
-                showList.set(currentSelectedPosition, true);
+                for (int i=0;i>showList.size();i++){
+                   if (showList.get(i) ==true){
+                       Collections.fill(showList, Boolean.FALSE);
+                   }
+                }
+                Boolean isSelected =showList.get(position);
+                Boolean isSelectednot= !isSelected;
+                showList.set(position, isSelectednot);
                 notifyDataSetChanged();
-
             }
 
         });
 
-        if (showList.get(position) == true){
-            if (currentSelectedPosition == position){
-                if (holder.diyetTextView.getVisibility() == View.VISIBLE) {
-                    holder.diyetTextView.setVisibility(View.GONE);
-                } else {
-                    holder.diyetTextView.setVisibility(View.VISIBLE);
-                }
+        if (showList.get(position)){
 
-            }
+            holder.diyetTextView.setVisibility(View.VISIBLE);
         }
         else {
             holder.diyetTextView.setVisibility(View.GONE);
