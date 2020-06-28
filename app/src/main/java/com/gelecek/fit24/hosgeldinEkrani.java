@@ -37,10 +37,9 @@ import java.util.Objects;
  * A simple {@link Fragment} subclass.
  */
 public class hosgeldinEkrani extends Fragment {
-    Button egzersizegit,idealsayfasinagit,diyetegit,butonkalori,btnekle;
+    Button btnekle;
     AutoCompleteTextView autotext;
     TextView txttoplam,txthedef;
-    private KaloriViewModel mKaloriViewModel;
     public static final int NEW_KALORI_ACTIVITY_REQUEST_CODE = 1;
     boolean durum=false;
     int gunluk_kalori;
@@ -104,10 +103,10 @@ public class hosgeldinEkrani extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Anasayfa");
 
         //Günlük kalori ihtiyacı hesaplama
-        UserId = ((MainActivity)getActivity()).getLoginUserId();
+        UserId = ((MainActivity)getActivity()).getLoginUserId(); //Hangi user giriş yapmış onun UserId sini alıyoruz
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
         final UserDao userDao = database.userDao();
-        User user= userDao.getLoginUser(UserId);
+        User user= userDao.getLoginUser(UserId); //User Id ye göre user bilgilerini getir
         yas= user.Age;
         kilo=user.Weight;
         boy=user.Height;
@@ -115,7 +114,7 @@ public class hosgeldinEkrani extends Fragment {
         gender=user.Gender;
         goal=user.Goal;
 
-      switch (reactivity){
+      switch (reactivity){ // Aktiflik derecesine göre
           case 1: af=1.2;
               break;
           case 2: af=1.55;
@@ -126,13 +125,14 @@ public class hosgeldinEkrani extends Fragment {
       }
         if (gender==1) //erkek
         {
-            bmh = 655 + 9.6 *(kilo) + 1.8*(boy) - 4.7*(yas);
+            bmh = 655 + 9.6 *(kilo) + 1.8*(boy) - 4.7*(yas); //Bazal metabolizma hızı
 
         }
         if (gender==2){ //kadın
             bmh = 66 + 13.7 *(kilo) + 5*(boy) - 6.8*(yas);
         }
-        gunluk= bmh*af;
+        gunluk= bmh*af; //Günlük kalori ihtiyacı formülü
+
         if (goal==1){ //kilo ver
             gunluk-=297;
         }
@@ -143,10 +143,10 @@ public class hosgeldinEkrani extends Fragment {
         txthedef.setText(gun+"");
 
         final NavController navController = Navigation.findNavController(view);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() { //Sabah akşam tab işlemleri
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
+                if (tab.getPosition() == 0) { // Eğer sabah seçili ise öğün 1 yap
                     ogun=1;
                 }
                 if (tab.getPosition() == 1) {
@@ -181,9 +181,9 @@ public class hosgeldinEkrani extends Fragment {
                 checkDataEntered();
                 if(durum==true) {
                     Kalori gelenkalori = kaloriDao.getKalorim(secilenYemek);
-                    Date date = new Date();
-                    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-                    String strDate = formatter.format(date);
+                    Date date = new Date(); //Şuanki tarihi aldık
+                    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //Tarihi formatladık.
+                    String strDate = formatter.format(date); //Stringe çevirdik.
 
                     Tuketim tuketim= new Tuketim();
                     tuketim.setTuketimId(tuketimId);

@@ -66,7 +66,7 @@ public class cinsiyetEkran extends Fragment {
         imgkadın.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgkadın.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.siyah));
+                imgkadın.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.siyah)); //kadın seçildiyse arkaplan siyah
                 imgerkek.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.background));
                 cinsiyet=2;
             }

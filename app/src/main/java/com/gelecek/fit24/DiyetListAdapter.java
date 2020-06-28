@@ -53,32 +53,32 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         }
         holder.diyetItemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { //Diyet butonlarına tıklanıldığında
                 for (int i=0;i>showList.size();i++){
-                   if (showList.get(i) ==true){
-                       Collections.fill(showList, Boolean.FALSE);
+                   if (showList.get(i) ==true){ // Bak bakalım içinde true yani açık olan bir açıklama var mı
+                       Collections.fill(showList, Boolean.FALSE); //Var ise hepsini baştan false yap.Tüm açıklamalar kapanacak
                    }
                 }
-                Boolean isSelected =showList.get(position);
-                Boolean isSelectednot= !isSelected;
-                showList.set(position, isSelectednot);
+                Boolean isSelected =showList.get(position); //Gelen pozisyona göre o indexdeki true false değerini aldık
+                Boolean isSelectednot= !isSelected; // aldığımız değeri tersine çevirdik. False ise true yaptık
+                showList.set(position, isSelectednot); //showlist de gelen pozisyona o değeri atadık.
                 notifyDataSetChanged();
             }
 
         });
 
-        if (showList.get(position)){
-            holder.diyetTextView.setVisibility(View.VISIBLE);
+        if (showList.get(position)){ //Eğer seçilen butonun olduğu pozisyon true ise
+            holder.diyetTextView.setVisibility(View.VISIBLE); //Açıklama visible
         }
         else {
-            holder.diyetTextView.setVisibility(View.GONE);
+            holder.diyetTextView.setVisibility(View.GONE); //Değil ise gone
         }
     }
 
     void setWords(List<Diyet> diyets) {
         mDiyet = diyets;
-        showList=new ArrayList<Boolean>(Arrays.asList(new Boolean[mDiyet.size()]));
-        Collections.fill(showList, Boolean.FALSE);
+        showList=new ArrayList<Boolean>(Arrays.asList(new Boolean[mDiyet.size()])); //Diyet uzunluğu kadar bir list oluşturdum
+        Collections.fill(showList, Boolean.FALSE);  //İlk başta hepsi false ,tüm açıklamalar kapalı
 
         notifyDataSetChanged();
     }

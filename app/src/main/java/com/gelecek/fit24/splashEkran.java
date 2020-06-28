@@ -26,7 +26,7 @@ import android.widget.TextView;
 public class splashEkran extends Fragment {
     private ImageView logo;
     private TextView dogru,spor,form;
-    private static int splashTimeout= 5000;
+    private static int splashTimeout= 5000; //5 saniye sonra diğer ekrana geçecek
     public splashEkran() {
         // Required empty public constructor
     }
@@ -56,7 +56,7 @@ public class splashEkran extends Fragment {
 
             }
         },splashTimeout);
-        Animation myanim= AnimationUtils.loadAnimation(getActivity(),R.anim.mysplashanimation);
+        Animation myanim= AnimationUtils.loadAnimation(getActivity(),R.anim.mysplashanimation); //Ayarlanan animationa göre yükle
         logo.startAnimation(myanim);
         dogru.startAnimation(myanim);
         form.startAnimation(myanim);

@@ -15,16 +15,16 @@ public interface UserDao {
     LiveData<List<User>> getUsers();
 
     @Query("SELECT * FROM User WHERE Email LIKE :sorgu ")
-    List<User> getSorgum(String sorgu);
+    List<User> getSorgum(String sorgu); //Böyle bir email daha önceden kullanılmış mı
 
     @Query("SELECT * FROM User WHERE UserId= ( SELECT MAX(UserId) FROM User)")
-    User getSonUser();
+    User getSonUser(); //Update yaparken son kayıt yapmış userı alıyoruz
 
     @Query("SELECT * FROM User WHERE UserId LIKE :sorgu")
-    User getLoginUser(int sorgu);
+    User getLoginUser(int sorgu); //UserId ye göre login yapan user buluyoruz
 
     @Query("SELECT * FROM User WHERE Email LIKE  :email   AND Password LIKE '%' || :sifre || '%'")
-    User getUser(String email,String sifre);
+    User getUser(String email,String sifre); //Email ve şifre doğru mu diye bakıyoruz
 
     @Query("SELECT * FROM User WHERE Email LIKE  :email   AND Password LIKE '%' || :sifre || '%'")
     List<User> getLoginSorgum(String email,String sifre);

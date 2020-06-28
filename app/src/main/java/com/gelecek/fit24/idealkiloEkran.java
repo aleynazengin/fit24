@@ -65,8 +65,8 @@ public class idealkiloEkran extends Fragment {
         btnhesapla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = radioGroup.findViewById(selectedId);
+                selectedId = radioGroup.getCheckedRadioButtonId(); //radio gruptan check edilen radiobuttonun idsini al
+                radioButton = radioGroup.findViewById(selectedId); // idye göre radiobuttonu bul
                 checkDataEntered();
                 if(durum==true) {
 
@@ -76,19 +76,19 @@ public class idealkiloEkran extends Fragment {
                     boy = Integer.parseInt(value2);
 
                     // find the radiobutton by returned id
-                    if (selectedId == R.id.radioButtonkadın) {
+                    if (selectedId == R.id.radioButtonkadın) { // kadın ise
                         idealkilo = 45.5 + (2.3 / 2.54) * (boy - 152.4);
                     }
-                    if (selectedId == R.id.radioButtonerkek) {
+                    if (selectedId == R.id.radioButtonerkek) { //erkek ise
                         idealkilo = 50 + (2.3 / 2.54) * (boy - 152.4);
                     }
-                    int idealkilom = (int) idealkilo;
+                    int idealkilom = (int) idealkilo; //double gelen değeri inte çevir
 
                     txtideal.setText(idealkilom + "");
                     fark = idealkilom - kilo;
                     int farkım = (int) fark;
 
-                    farkım= Math.abs(farkım);
+                    farkım= Math.abs(farkım); //Fark her zaman mutlak değer olarak gözüksün
                     txtfark.setText("" + farkım);
                 }
             }
