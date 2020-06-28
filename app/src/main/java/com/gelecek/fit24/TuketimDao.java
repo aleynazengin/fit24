@@ -14,4 +14,7 @@ public interface TuketimDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTuketimler(Tuketim tuketim);
+
+    @Query("SELECT * FROM Tuketim WHERE TuketimId= ( SELECT MAX(TuketimId) FROM Tuketim)")
+    Tuketim getSonTuketim();
 }

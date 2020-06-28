@@ -18,7 +18,7 @@
             android:layout_width="364dp"
             android:layout_height="140dp"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/idealicon"
             tools:srcCompat="@drawable/idealicon" />
 
@@ -57,13 +57,32 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/style_spinner" />
+        <TextView
+            android:id="@+id/textViewyas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Yaşınız?"
+            android:textColor="@color/siyah"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editTextyas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            />
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:max="100"
             android:progress="50"
             android:progressTint="#9C27B0" />
@@ -75,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#FFFFFF"
             android:text="Devam"
             android:textColor="#009688"

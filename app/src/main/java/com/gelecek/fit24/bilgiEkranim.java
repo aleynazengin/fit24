@@ -9,13 +9,16 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 /**
@@ -25,7 +28,10 @@ public class bilgiEkranim extends Fragment {
     Button btndevamet;
     ViewModel userViewModel;
     int boy=0;
-    int kilo=0;
+    int kilo=0,yas=0;
+    EditText age;
+    String value;
+    Boolean durum=false;
 
     public bilgiEkranim() {
         // Required empty public constructor
@@ -39,6 +45,7 @@ public class bilgiEkranim extends Fragment {
         View view = inflater.inflate(R.layout.fragment_bilgi_ekranim, container, false);
         userViewModel = ViewModelProviders.of(this).get(ViewModel.class);
         btndevamet= view.findViewById(R.id.buttondevamet);
+        age=view.findViewById(R.id.editTextyas);
         Spinner spinner1=view.findViewById(R.id.spinner);
         Spinner spinner2=view.findViewById(R.id.spinner2);
         final String[] heightvalue={"140 cm","141 cm","142 cm","143 cm","144 cm","145 cm","146 cm","147 cm",
@@ -100,22 +107,43 @@ public class bilgiEkranim extends Fragment {
         ((MainActivity)getActivity()).showActionBar();
         final NavController navController = Navigation.findNavController(view);
 
+
         btndevamet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
-                final UserDao userDao = database.userDao();
-                User user= userDao.getSonUser();
-                updateClicked(user);
-                navController.navigate(R.id.action_bilgiEkranim_to_spordereceEkran);
+                checkDataEntered();
+                if(durum==true) {
 
+                    value = age.getText().toString();
+                    yas = Integer.parseInt(value);
+                    AppDatabase database = ((FitApplication) getActivity().getApplication()).getAppDatabase();
+                    final UserDao userDao = database.userDao();
+                    User user = userDao.getSonUser();
+                    updateClicked(user);
+                    navController.navigate(R.id.action_bilgiEkranim_to_spordereceEkran);
+                }
             }
         });
     }
     public void updateClicked(User user) {
         user.setHeight(boy);
         user.setWeight(kilo);
+        user.setAge(yas);
         userViewModel.updateUser(user);
 
+    }
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
+    void checkDataEntered() {
+        if (isEmpty(age)) {
+            Toast t = Toast.makeText(getActivity(), "Lütfen yaşınızı giriniz!", Toast.LENGTH_SHORT);
+            t.show();
+
+        }
+        else{
+            durum=true;
+        }
     }
 }

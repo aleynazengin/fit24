@@ -2,12 +2,10 @@ package com.gelecek.fit24;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
+  public int userId=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,4 +24,16 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
     }
+
+    public void SetLoginUserId(int Id) {
+        this.userId= Id;
+    }
+
+    public int getLoginUserId() {
+      return userId;
+
+    }
+
+
+
 }
