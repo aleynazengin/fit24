@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorAccent">@color/toolbarTransparent</item>
-        <item name="android:colorPrimaryDark">@color/toolbarTransparent</item>
+        <item name="colorAccent">@color/siyah</item>
+        <item name="android:colorPrimaryDark">@color/siyah</item>
 
     </style>
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">

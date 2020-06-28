@@ -29,7 +29,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class diyetListe extends Fragment {
-    Button egzersizegit,idealsayfasinagit,diyetegit,diyetgetir;
+    Button diyetgetir;
     private DiyetViewModel mDiyetViewModel;
     TextView aciklama;
 
@@ -44,13 +44,10 @@ public class diyetListe extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_diyet_liste, container, false);
-        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
 
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
         NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
 
-        egzersizegit=view.findViewById(R.id.buttonegzersiz3);
-        idealsayfasinagit=view.findViewById(R.id.buttonideal3);
-        diyetegit=view.findViewById(R.id.buttondiyet3);
         diyetgetir=view.findViewById(R.id.buttondiyetgetir);
         aciklama=view.findViewById(R.id.textViewdiyetitem);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview2);
@@ -79,24 +76,6 @@ public class diyetListe extends Fragment {
         ((MainActivity)getActivity()).showActionBar();
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Diyet Listeleri");
 
-        final NavController navController = Navigation.findNavController(view);
-        egzersizegit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_diyetListe_to_egzersizListe);
-            }
-        });
-        idealsayfasinagit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_diyetListe_to_idealkiloEkran);
-            }
-        });
-        diyetegit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_diyetListe_self);
-            }
-        });
+
     }
 }

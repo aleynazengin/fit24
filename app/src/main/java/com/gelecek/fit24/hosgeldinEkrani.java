@@ -64,18 +64,14 @@ public class hosgeldinEkrani extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_hosgeldin_ekrani, container, false);
 
-        BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.diyetListe, R.id.egzersizListe, R.id.hosgeldinEkrani,R.id.idealkiloEkran,R.id.ayarlarFragment,R.id.fragment_diyet_liste)
-                .build();
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
+        NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
+
 
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
         final KaloriDao kaloriDao = database.kaloriDao();
         btnekle=view.findViewById(R.id.buttonekle);
-        egzersizegit=view.findViewById(R.id.buttonegzersiz);
-        idealsayfasinagit=view.findViewById(R.id.buttonideal);
-        diyetegit=view.findViewById(R.id.buttondiyet);
-        butonkalori=view.findViewById(R.id.buttonkalori);
+
         autotext=view.findViewById(R.id.autoCompleteTextView);
         txthedef = view.findViewById(R.id.textViewhedef);
         txttoplam=view.findViewById(R.id.textViewtoplam);
@@ -105,6 +101,8 @@ public class hosgeldinEkrani extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Anasayfa");
+
         //Günlük kalori ihtiyacı hesaplama
         UserId = ((MainActivity)getActivity()).getLoginUserId();
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
@@ -205,31 +203,8 @@ public class hosgeldinEkrani extends Fragment {
 
             }
         });
-        egzersizegit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_hosgeldinEkrani_to_egzersizListe);
-            }
-        });
-        idealsayfasinagit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_hosgeldinEkrani_to_idealkiloEkran);
-            }
-        });
-        diyetegit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_hosgeldinEkrani_to_diyetListe);
 
-            }
-        });
-        butonkalori.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_hosgeldinEkrani_to_kalorilisteEkran);
-            }
-        });
+
 
 
     }

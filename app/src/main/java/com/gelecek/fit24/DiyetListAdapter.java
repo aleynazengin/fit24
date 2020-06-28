@@ -18,8 +18,6 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         private final Button diyetItemView;
         private final TextView diyetTextView;
 
-
-
         private DiyetViewHolder(View itemView) {
             super(itemView);
             diyetItemView = itemView.findViewById(R.id.buttondiyetgetir);
@@ -70,7 +68,6 @@ public class DiyetListAdapter extends RecyclerView.Adapter<DiyetListAdapter.Diye
         });
 
         if (showList.get(position)){
-
             holder.diyetTextView.setVisibility(View.VISIBLE);
         }
         else {

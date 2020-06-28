@@ -10,7 +10,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,11 +29,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class egzersizListe extends Fragment {
-    Button egzersizegit, idealsayfasinagit, diyetegit,butonkalori;
     private EgzersizViewModel mEgzersizViewModel;
-    TextView aciklama;
-
-    private int[] images = {R.drawable.isinmaicon,R.drawable.karnicon,R.drawable.dumbbells_exercise__1_,R.drawable.legicon,R.drawable.omuzicon,R.drawable.pilatesicon,R.drawable.yogaicon,R.drawable.isinmaicon};
 
     public static final int NEW_EGZERSIZ_ACTIVITY_REQUEST_CODE = 1;
 
@@ -52,7 +47,7 @@ public class egzersizListe extends Fragment {
 
         final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
         NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Egzersiz Listeleri");
+
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview3);
         final EgzersizListAdapter adapter = new EgzersizListAdapter(getActivity());
@@ -77,6 +72,8 @@ public class egzersizListe extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Egzersiz Listeleri");
+
 
     }
 
