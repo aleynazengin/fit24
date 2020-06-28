@@ -1,11 +1,9 @@
 package com.gelecek.fit24;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
@@ -62,7 +60,6 @@ public class kayitEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Kayıt Ol");
 
         kayitol.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +85,10 @@ public class kayitEkran extends Fragment {
                     Snackbar.make(view, "Kayıt başarılı", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
                     final NavController navController = Navigation.findNavController(view);
+                    AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+                    final UserDao userDao = database.userDao();
+                    User user= userDao.getSonUser();
+                    ((MainActivity)getActivity()).SetLoginUserId(user.Id);
                     navController.navigate(R.id.action_kayitEkran_to_cinsiyetEkran);
                 }
             }

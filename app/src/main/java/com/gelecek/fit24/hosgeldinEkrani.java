@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,8 +44,13 @@ public class hosgeldinEkrani extends Fragment {
     public static final int NEW_KALORI_ACTIVITY_REQUEST_CODE = 1;
     boolean durum=false;
     int gunluk_kalori;
+    int UserId=2;
     String secilenYemek="";
-
+    TabLayout tabLayout;
+    int ogun=1;
+    int yas=0,boy=0,kilo=0,reactivity=0,gender=0;
+    double bmh=0,af=0,gunluk=0,goal=0;
+    int tuketimId=0;
 
     public hosgeldinEkrani() {
 
@@ -73,11 +79,10 @@ public class hosgeldinEkrani extends Fragment {
         autotext=view.findViewById(R.id.autoCompleteTextView);
         txthedef = view.findViewById(R.id.textViewhedef);
         txttoplam=view.findViewById(R.id.textViewtoplam);
-
+        tabLayout=view.findViewById(R.id.tablayout);
         List<String> arrList = new ArrayList<String>();
         List<Kalori> kaloriler = kaloriDao.getSorgu(autotext.getText().toString());
         for (int x = 0; x < kaloriler.size(); x++){
-
             arrList.add(kaloriler.get(x).YemekAdi);
 
         }
@@ -92,6 +97,7 @@ public class hosgeldinEkrani extends Fragment {
                 secilenYemek= ((TextView)view).getText().toString();
             }
         });
+
         return view;
     }
 
@@ -99,13 +105,81 @@ public class hosgeldinEkrani extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        //Günlük kalori ihtiyacı hesaplama
+        UserId = ((MainActivity)getActivity()).getLoginUserId();
+        AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+        final UserDao userDao = database.userDao();
+        User user= userDao.getLoginUser(UserId);
+        yas= user.Age;
+        kilo=user.Weight;
+        boy=user.Height;
+        reactivity=user.Reactivity;
+        gender=user.Gender;
+        goal=user.Goal;
+
+      switch (reactivity){
+          case 1: af=1.2;
+              break;
+          case 2: af=1.55;
+              break;
+          case 3: af=1.725;
+              break;
+          default:break;
+      }
+        if (gender==1) //erkek
+        {
+            bmh = 655 + 9.6 *(kilo) + 1.8*(boy) - 4.7*(yas);
+
+        }
+        if (gender==2){ //kadın
+            bmh = 66 + 13.7 *(kilo) + 5*(boy) - 6.8*(yas);
+        }
+        gunluk= bmh*af;
+        if (goal==1){ //kilo ver
+            gunluk-=297;
+        }
+        if (goal==3){ //kilo al
+            gunluk+=297;
+        }
+        int gun= (int) gunluk;
+        txthedef.setText(gun+"");
+
         final NavController navController = Navigation.findNavController(view);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    ogun=1;
+                }
+                if (tab.getPosition() == 1) {
+                    ogun=2;
+                }
+                if (tab.getPosition() == 2) {
+                    ogun=3;
+                }
+                if (tab.getPosition() == 3) {
+                    ogun=4;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
         btnekle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
                 final KaloriDao kaloriDao = database.kaloriDao();
                 final TuketimDao tuketimDao = database.tuketimDao();
+                Tuketim tuketimgelen= tuketimDao.getSonTuketim();
+                if (tuketimgelen!=null){
+                tuketimId= tuketimgelen.TuketimId;
+                }
+                tuketimId++;
                 checkDataEntered();
                 if(durum==true) {
                     Kalori gelenkalori = kaloriDao.getKalorim(secilenYemek);
@@ -114,14 +188,15 @@ public class hosgeldinEkrani extends Fragment {
                     String strDate = formatter.format(date);
 
                     Tuketim tuketim= new Tuketim();
-                    tuketim.setUserId(2);
+                    tuketim.setTuketimId(tuketimId);
+                    tuketim.setUserId(UserId);
                     tuketim.setKaloriId(gelenkalori.KaloriId);
                     tuketim.setKalorisi(gelenkalori.Kalorisi);
                     tuketim.setTarih(strDate);
-                    tuketim.setOgun(1);
+                    tuketim.setOgun(ogun);
                     tuketim.setKaloriYemekAdi(gelenkalori.YemekAdi);
                     tuketimDao.insertTuketimler(tuketim);
-
+                    autotext.setText("");
                     gunluk_kalori+=gelenkalori.Kalorisi;
                     txttoplam.setText(gunluk_kalori+"");
                     Toast t = Toast.makeText(getActivity(), "Başarılı!", Toast.LENGTH_SHORT);
@@ -165,9 +240,10 @@ public class hosgeldinEkrani extends Fragment {
 
     void checkDataEntered(){
         if (isEmpty(autotext)) {
-            Toast t = Toast.makeText(getActivity(), "Önce yemek seçiniz!", Toast.LENGTH_SHORT);
+            Toast t = Toast.makeText(getActivity(), "Lütfen yemek seçiniz!", Toast.LENGTH_SHORT);
             t.show();
         }
+
         else{
             durum=true;
         }

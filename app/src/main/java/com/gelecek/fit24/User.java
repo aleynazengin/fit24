@@ -67,7 +67,6 @@ public class User {
 
 
 
-
     @NonNull
     public String getSurname() {
         return Surname;

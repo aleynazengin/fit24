@@ -18,6 +18,7 @@ import androidx.room.PrimaryKey;
                 parentColumns = "KaloriId",
                 childColumns = "KaloriId"
         )})
+
 public class Tuketim {
     @PrimaryKey
     @ColumnInfo(name = "TuketimId")
@@ -51,6 +52,11 @@ public class Tuketim {
 
     public int getUserId() {
         return UserId;
+    }
+
+
+    public void setTuketimId(int tuketimId) {
+        TuketimId = tuketimId;
     }
 
     public void setUserId(int userId) {
