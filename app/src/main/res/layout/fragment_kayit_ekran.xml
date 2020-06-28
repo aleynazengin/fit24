@@ -36,16 +36,15 @@
                 <EditText
                     android:id="@+id/editTextadı"
                     android:layout_width="match_parent"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:text="Ad"
-                    android:hint="Ad"
-                    android:textStyle="bold"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="#2503A9F4"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Ad"
                     android:inputType="textMultiLine"
-                    android:textColorHighlight="#251919" />
+                    android:textColorHighlight="#251919"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -57,15 +56,14 @@
                 <EditText
                     android:id="@+id/editTextsoyadı"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:textStyle="bold"
-                    android:text="Soyad"
-                    android:hint="Soyad"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:background="#2503A9F4"
-                    android:inputType="textPersonName" />
+                    android:ems="10"
+                    android:hint="Soyad"
+                    android:inputType="textPersonName"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -80,12 +78,11 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:text="a@g.com"
-                    android:hint="E-posta"
-                    android:textStyle="bold"
                     android:background="#2503A9F4"
-                    android:inputType="textEmailAddress" />
+                    android:ems="10"
+                    android:hint="E-posta"
+                    android:inputType="textEmailAddress"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -110,12 +107,11 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
+                        android:background="#2503A9F4"
                         android:ems="10"
                         android:hint="Şifre"
-                        android:text="123456"
-                        android:textStyle="bold"
-                        android:background="#2503A9F4"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

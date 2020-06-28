@@ -9,26 +9,32 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview3"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/recycle_egzersiz" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/recycle_egzersiz" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
         app:itemBackground="@color/colorPrimary"
-        app:itemTextColor="@color/background"
         app:itemIconTint="@color/background"
+        app:itemTextColor="@color/background"
         app:menu="@menu/menu_navigation"
-        app:navGraph="@navigation/mobile_navigation"
-        android:layout_alignParentBottom="true"/>
+        app:navGraph="@navigation/mobile_navigation" />
 
 </RelativeLayout>

@@ -28,41 +28,6 @@
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|center"
-        android:orientation="horizontal"
-        android:visibility="invisible">
-
-        <Button
-            android:id="@+id/buttondiyet3"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Diyet Listesi"
-            android:textColor="@color/background"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/buttonegzersiz3"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Egzersiz Listesi"
-            android:textColor="@color/background"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/buttonideal3"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="İdeal Kilo"
-            android:textColor="@color/background"
-            android:textStyle="bold" />
-
-    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

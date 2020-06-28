@@ -27,11 +27,6 @@
             app:destination="@id/kayitEkran" />
     </fragment>
     <fragment
-        android:id="@+id/ayarlarFragment"
-        android:name="com.gelecek.fit24.ayarlarFragment"
-        android:label="fragment_ayarlar"
-        tools:layout="@layout/fragment_ayarlar" />
-    <fragment
         android:id="@+id/girisEkran"
         android:name="com.gelecek.fit24.GirisEkran"
         android:label="fragment_giris_ekran"
@@ -78,6 +73,9 @@
         <action
             android:id="@+id/action_egzersizListe_to_kalorilisteEkran"
             app:destination="@id/kalorilisteEkran" />
+        <action
+            android:id="@+id/action_egzersizListe_to_egzDetay"
+            app:destination="@id/egzDetay" />
     </fragment>
     <fragment
         android:id="@+id/hedefEkran"
@@ -178,4 +176,8 @@
             android:id="@+id/action_diyetListe_to_kalorilisteEkran"
             app:destination="@id/kalorilisteEkran" />
     </fragment>
+    <fragment
+        android:id="@+id/egzDetay"
+        android:name="com.gelecek.fit24.EgzDetay"
+        android:label="EgzDetay" />
 </navigation>
