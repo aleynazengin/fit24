@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -37,21 +40,22 @@ public class EgzersizListAdapter extends RecyclerView.Adapter<EgzersizListAdapte
     private final LayoutInflater mEInflater;
 
     private List<Egzersiz> mEgzersiz;
-
+    private List<Boolean>showList;
     EgzersizListAdapter(Context context) {
         mEInflater = LayoutInflater.from(context);
     }
+
 
     @Override
     public EgzersizListAdapter.EgzersizViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View itemView = mEInflater.inflate(R.layout.recycle_egzersiz, parent, false);
-        return new EgzersizViewHolder(itemView);
+        return new EgzersizListAdapter.EgzersizViewHolder(itemView);
     }
 
 
     @Override
-    public void onBindViewHolder(final EgzersizViewHolder holder, int position) {
+    public void onBindViewHolder(final EgzersizViewHolder holder, final int position) {
         if (mEgzersiz != null) {
             Egzersiz current = mEgzersiz.get(position);
             holder.egzAdi.setText(current.EgzersizAdi);
@@ -85,33 +89,35 @@ public class EgzersizListAdapter extends RecyclerView.Adapter<EgzersizListAdapte
         holder.egzImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                currentSelectedPosition = holder.getAdapterPosition();
+                for (int i=0;i>showList.size();i++){
+                    if (showList.get(i) ==true){
+                        Collections.fill(showList, Boolean.FALSE);
+                    }
+                }
+                Boolean isSelected =showList.get(position);
+                Boolean isSelectednot= !isSelected;
+                showList.set(position, isSelectednot);
                 notifyDataSetChanged();
             }
+
         });
+        if (showList.get(position)){
 
-
-            if (currentSelectedPosition == position) {
-                if (holder.egzImage.getVisibility()==View.VISIBLE)
-                {
-                    holder.egzImage1.setVisibility(View.VISIBLE);
-                    holder.egzImage2.setVisibility(View.VISIBLE);
-                    holder.egzAciklama.setVisibility(View.VISIBLE);
-                }
-                else {
-                }
-
-            }
-            else {
-                holder.egzImage1.setVisibility(View.GONE);
-                holder.egzImage2.setVisibility(View.GONE);
-                holder.egzAciklama.setVisibility(View.GONE);
-            }
-
+            holder.egzImage1.setVisibility(View.VISIBLE);
+            holder.egzImage2.setVisibility(View.VISIBLE);
+            holder.egzAciklama.setVisibility(View.VISIBLE);
+        }
+        else {
+            holder.egzImage1.setVisibility(View.GONE);
+            holder.egzImage2.setVisibility(View.GONE);
+            holder.egzAciklama.setVisibility(View.GONE);
+        }
         }
 
     void setWords(List<Egzersiz> egzersizs) {
         mEgzersiz = egzersizs;
+        showList=new ArrayList<Boolean>(Arrays.asList(new Boolean[mEgzersiz.size()]));
+        Collections.fill(showList, Boolean.FALSE);
         notifyDataSetChanged();
     }
     @Override

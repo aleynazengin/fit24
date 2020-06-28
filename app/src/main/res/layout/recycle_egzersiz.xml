@@ -47,7 +47,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal">
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,16 +59,19 @@
 
             <ImageView
                 android:id="@+id/egzImage1"
-                android:layout_width="190dp"
-                android:layout_height="120dp"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:visibility="visible"
                 tools:srcCompat="" />
 
             <ImageView
                 android:id="@+id/egzImage2"
-                android:layout_width="190dp"
-                android:layout_height="120dp"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="15dp"
                 android:layout_weight="1"
                 android:visibility="visible"
                 tools:srcCompat="" />
@@ -76,12 +81,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/egzAciklama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="#00BCD4"
                 android:padding="2dp"
@@ -89,6 +97,12 @@
                 android:textColor="@color/siyah"
                 android:textSize="23dp"
                 android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"></LinearLayout>
+
         </LinearLayout>
 
 
