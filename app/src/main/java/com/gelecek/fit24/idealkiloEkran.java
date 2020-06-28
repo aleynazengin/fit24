@@ -4,9 +4,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -18,6 +20,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 /**
@@ -45,9 +49,7 @@ public class idealkiloEkran extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view= inflater.inflate(R.layout.fragment_idealkilo_ekran, container, false);
-        egzersizegit=view.findViewById(R.id.buttonegzersiz2);
-        idealsayfasinagit=view.findViewById(R.id.buttonideal2);
-        diyetegit=view.findViewById(R.id.buttondiyet2);
+
         editTextboy=view.findViewById(R.id.editTextboy);
         editTextkilo=view.findViewById(R.id.editTextkilo);
         btnhesapla=view.findViewById(R.id.buttonhesapla);
@@ -55,6 +57,9 @@ public class idealkiloEkran extends Fragment {
         txtideal=view.findViewById(R.id.textViewideal);
         txtfark = view.findViewById(R.id.textViewfark);
 
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
+
+        NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
 
 
         btnhesapla.setOnClickListener(new View.OnClickListener() {
@@ -94,25 +99,10 @@ public class idealkiloEkran extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("İdeal Kilo Hesaplama");
+
         final NavController navController = Navigation.findNavController(view);
-        egzersizegit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_idealkiloEkran_to_egzersizListe);
-            }
-        });
-        idealsayfasinagit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_idealkiloEkran_self);
-            }
-        });
-        diyetegit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_idealkiloEkran_to_diyetListe);
-            }
-        });
+
     }
     boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();

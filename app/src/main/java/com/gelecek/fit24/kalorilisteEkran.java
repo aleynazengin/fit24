@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,8 +16,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -27,6 +31,7 @@ public class kalorilisteEkran extends Fragment {
     private KaloriViewModel mKaloriViewModel;
 
     Button egzersizegit,idealsayfasinagit,diyetegit,butonkalori;
+
 
     public static final int NEW_KALORI_ACTIVITY_REQUEST_CODE = 1;
     public kalorilisteEkran() {
@@ -39,6 +44,10 @@ public class kalorilisteEkran extends Fragment {
                              Bundle savedInstanceState) {
 
         View view=  inflater.inflate(R.layout.fragment_kaloriliste_ekran, container, false);
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
+
+        NavigationUI.setupWithNavController(bottomNavigationView, Navigation.findNavController(requireActivity(),R.id.fragment));
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Kalori Listesi");
 
         AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
 

@@ -192,52 +192,15 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="bottom|center"
-
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttondiyet2"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Diyet Listesi"
-
-                android:textStyle="bold"
-                android:textColor="#009688"/>
-
-            <Button
-                android:id="@+id/buttonegzersiz2"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Egzersiz Listesi"
-                android:textColor="#009688"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/buttonideal2"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:text="İdeal Kilo"
-                android:textColor="#009688"
-                android:textStyle="bold"
-                />
-        </LinearLayout>
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigation"
         app:itemBackground="@color/colorPrimary"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@color/background"
+        app:itemIconTint="@color/background"
         app:menu="@menu/menu_navigation"
+        app:navGraph="@navigation/mobile_navigation"
         android:layout_alignParentBottom="true"/>
 </RelativeLayout>

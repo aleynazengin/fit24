@@ -3,30 +3,87 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/fragment_diyet_liste">
+    app:startDestination="@+id/hosgeldinEkrani">
 
     <fragment android:label="Diyet Liste"
         android:id="@+id/diyetListe"
         android:name="com.gelecek.fit24.diyetListe"
-        tools:layout="@layout/fragment_diyet_liste"/>
+        tools:layout="@layout/fragment_diyet_liste">
+        <action
+            android:id="@+id/action_diyetListe_to_egzersizListe2"
+            app:destination="@id/egzersizListe" />
+        <action
+            android:id="@+id/action_diyetListe_to_hosgeldinEkrani"
+            app:destination="@id/hosgeldinEkrani" />
+        <action
+            android:id="@+id/action_diyetListe_to_idealkiloEkran2"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_diyetListe_to_idealkiloEkran3"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_diyetListe_to_kalorilisteEkran2"
+            app:destination="@id/kalorilisteEkran" />
+
+    </fragment>
 
     <fragment android:label="Egzersiz Liste"
         android:id="@+id/egzersizListe"
         android:name="com.gelecek.fit24.egzersizListe"
-        tools:layout="@layout/fragment_egzersiz_liste"/>
+        tools:layout="@layout/fragment_egzersiz_liste">
+        <action
+            android:id="@+id/action_egzersizListe_to_diyetListe2"
+            app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_egzersizListe_to_hosgeldinEkrani"
+            app:destination="@id/hosgeldinEkrani" />
+        <action
+            android:id="@+id/action_egzersizListe_to_idealkiloEkran2"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_egzersizListe_to_kalorilisteEkran2"
+            app:destination="@id/kalorilisteEkran" />
+    </fragment>
 
     <fragment android:label="Anasayfa"
         android:id="@+id/hosgeldinEkrani"
         android:name="com.gelecek.fit24.hosgeldinEkrani"
-        tools:layout="@layout/fragment_hosgeldin_ekrani"/>
+        tools:layout="@layout/fragment_hosgeldin_ekrani">
+        <action
+            android:id="@+id/action_hosgeldinEkrani_to_kalorilisteEkran2"
+            app:destination="@id/kalorilisteEkran" />
+        <action
+            android:id="@+id/action_hosgeldinEkrani_to_idealkiloEkran2"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_hosgeldinEkrani_to_egzersizListe2"
+            app:destination="@id/egzersizListe" />
+    </fragment>
 
     <fragment android:label="İdeal Kilo"
         android:id="@+id/idealkiloEkran"
         android:name="com.gelecek.fit24.idealkiloEkran"
-        tools:layout="@layout/fragment_idealkilo_ekran"/>
+        tools:layout="@layout/fragment_idealkilo_ekran">
+        <action
+            android:id="@+id/action_idealkiloEkran_to_diyetListe2"
+            app:destination="@id/diyetListe" />
+    </fragment>
 
-    <fragment android:label="Ayarlar"
-        android:id="@+id/ayarlarFragment"
+    <fragment android:label="Kalori Liste"
+        android:id="@+id/kalorilisteEkran"
         android:name="com.gelecek.fit24.ayarlarFragment"
-        tools:layout="@layout/fragment_ayarlar"/>
+        tools:layout="@layout/fragment_kaloriliste_ekran">
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_idealkiloEkran2"
+            app:destination="@id/idealkiloEkran" />
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_hosgeldinEkrani"
+            app:destination="@id/hosgeldinEkrani" />
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_diyetListe2"
+            app:destination="@id/diyetListe" />
+        <action
+            android:id="@+id/action_kalorilisteEkran_to_egzersizListe2"
+            app:destination="@id/egzersizListe" />
+    </fragment>
 </navigation>
