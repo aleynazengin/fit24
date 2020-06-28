@@ -86,7 +86,10 @@ public class GirisEkran extends Fragment {
         final UserDao userDao = database.userDao();
         List<User> users1 = userDao.getLoginSorgum(email.getText().toString(),sifre.getText().toString());
         if (users1.size()>0){
+            User user= userDao.getUser(email.getText().toString(),sifre.getText().toString());
+            ((MainActivity)getActivity()).SetLoginUserId(user.Id);
             durum=true;
+
 
         }
         else{

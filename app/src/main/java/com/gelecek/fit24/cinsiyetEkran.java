@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class cinsiyetEkran extends Fragment {
         imgerkek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgerkek.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.gray));
+                imgerkek.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.siyah));
                 imgkadın.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.background));
                 cinsiyet=1;
             }
@@ -62,7 +63,7 @@ public class cinsiyetEkran extends Fragment {
         imgkadın.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgkadın.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.gray));
+                imgkadın.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.siyah));
                 imgerkek.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.background));
                 cinsiyet=2;
             }
@@ -76,12 +77,20 @@ public class cinsiyetEkran extends Fragment {
         btndevam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
-                final UserDao userDao = database.userDao();
+                if (cinsiyet==0)
+                {
+                    Toast t = Toast.makeText(getActivity(), "Lütfen cinsiyet seçiniz.", Toast.LENGTH_SHORT);
+                    t.show();
+                }
+                else{
+                    AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+                    final UserDao userDao = database.userDao();
 
-                User user= userDao.getSonUser();
-                updateClicked(user);
-                navController.navigate(R.id.action_cinsiyetEkran_to_bilgiEkranim);
+                    User user= userDao.getSonUser();
+                    updateClicked(user);
+                    navController.navigate(R.id.action_cinsiyetEkran_to_bilgiEkranim);
+                }
+
             }
         });
     }

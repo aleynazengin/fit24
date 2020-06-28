@@ -20,7 +20,7 @@ import androidx.room.PrimaryKey;
         )})
 
 public class Tuketim {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @ColumnInfo(name = "TuketimId")
     @NonNull
     public int TuketimId = 0;
@@ -52,6 +52,11 @@ public class Tuketim {
 
     public int getUserId() {
         return UserId;
+    }
+
+
+    public void setTuketimId(int tuketimId) {
+        TuketimId = tuketimId;
     }
 
     public void setUserId(int userId) {

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 /**
@@ -37,9 +38,9 @@ public class hedefEkran extends Fragment {
         View view= inflater.inflate(R.layout.fragment_hedef_ekran, container, false);
         userViewModel = ViewModelProviders.of(this).get(ViewModel.class);
         bitir=view.findViewById(R.id.buttonbitir);
-        ver=view.findViewById(R.id.checkBox);
+        ver=view.findViewById(R.id.checkBox3);
         form=view.findViewById(R.id.checkBox2);
-        al=view.findViewById(R.id.checkBox3);
+        al=view.findViewById(R.id.checkBox);
         return  view;
     }
 
@@ -69,12 +70,18 @@ public class hedefEkran extends Fragment {
         bitir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
-                final UserDao userDao = database.userDao();
-                User user= userDao.getSonUser();
-                updateClicked(user);
-                navController.navigate(R.id.action_hedefEkran_to_hosgeldinEkrani);
-
+                if (goal==0)
+                {
+                    Toast t = Toast.makeText(getActivity(), "Lütfen hedef seçiniz.", Toast.LENGTH_SHORT);
+                    t.show();
+                }
+                else{
+                    AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+                    final UserDao userDao = database.userDao();
+                    User user= userDao.getSonUser();
+                    updateClicked(user);
+                    navController.navigate(R.id.action_hedefEkran_to_hosgeldinEkrani);
+                }
             }
         });
     }

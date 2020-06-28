@@ -78,9 +78,12 @@ public class idealkiloEkran extends Fragment {
                         idealkilo = 50 + (2.3 / 2.54) * (boy - 152.4);
                     }
                     int idealkilom = (int) idealkilo;
+
                     txtideal.setText(idealkilom + "");
-                    fark = idealkilo - kilo;
+                    fark = idealkilom - kilo;
                     int farkım = (int) fark;
+
+                    farkım= Math.abs(farkım);
                     txtfark.setText("" + farkım);
                 }
             }

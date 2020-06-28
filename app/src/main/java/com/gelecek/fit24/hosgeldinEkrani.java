@@ -44,9 +44,13 @@ public class hosgeldinEkrani extends Fragment {
     public static final int NEW_KALORI_ACTIVITY_REQUEST_CODE = 1;
     boolean durum=false;
     int gunluk_kalori;
+    int UserId=2;
     String secilenYemek="";
     TabLayout tabLayout;
-    int ogun=0;
+    int ogun=1;
+    int yas=0,boy=0,kilo=0,reactivity=0,gender=0;
+    double bmh=0,af=0,gunluk=0,goal=0;
+    int tuketimId=0;
 
     public hosgeldinEkrani() {
 
@@ -79,7 +83,6 @@ public class hosgeldinEkrani extends Fragment {
         List<String> arrList = new ArrayList<String>();
         List<Kalori> kaloriler = kaloriDao.getSorgu(autotext.getText().toString());
         for (int x = 0; x < kaloriler.size(); x++){
-
             arrList.add(kaloriler.get(x).YemekAdi);
 
         }
@@ -102,6 +105,45 @@ public class hosgeldinEkrani extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity)getActivity()).showActionBar();
+        //Günlük kalori ihtiyacı hesaplama
+        UserId = ((MainActivity)getActivity()).getLoginUserId();
+        AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
+        final UserDao userDao = database.userDao();
+        User user= userDao.getLoginUser(UserId);
+        yas= user.Age;
+        kilo=user.Weight;
+        boy=user.Height;
+        reactivity=user.Reactivity;
+        gender=user.Gender;
+        goal=user.Goal;
+
+      switch (reactivity){
+          case 1: af=1.2;
+              break;
+          case 2: af=1.55;
+              break;
+          case 3: af=1.725;
+              break;
+          default:break;
+      }
+        if (gender==1) //erkek
+        {
+            bmh = 655 + 9.6 *(kilo) + 1.8*(boy) - 4.7*(yas);
+
+        }
+        if (gender==2){ //kadın
+            bmh = 66 + 13.7 *(kilo) + 5*(boy) - 6.8*(yas);
+        }
+        gunluk= bmh*af;
+        if (goal==1){ //kilo ver
+            gunluk-=297;
+        }
+        if (goal==3){ //kilo al
+            gunluk+=297;
+        }
+        int gun= (int) gunluk;
+        txthedef.setText(gun+"");
+
         final NavController navController = Navigation.findNavController(view);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -133,6 +175,11 @@ public class hosgeldinEkrani extends Fragment {
                 AppDatabase database = ((FitApplication)getActivity().getApplication()).getAppDatabase();
                 final KaloriDao kaloriDao = database.kaloriDao();
                 final TuketimDao tuketimDao = database.tuketimDao();
+                Tuketim tuketimgelen= tuketimDao.getSonTuketim();
+                if (tuketimgelen!=null){
+                tuketimId= tuketimgelen.TuketimId;
+                }
+                tuketimId++;
                 checkDataEntered();
                 if(durum==true) {
                     Kalori gelenkalori = kaloriDao.getKalorim(secilenYemek);
@@ -141,14 +188,15 @@ public class hosgeldinEkrani extends Fragment {
                     String strDate = formatter.format(date);
 
                     Tuketim tuketim= new Tuketim();
-                    tuketim.setUserId(2);
+                    tuketim.setTuketimId(tuketimId);
+                    tuketim.setUserId(UserId);
                     tuketim.setKaloriId(gelenkalori.KaloriId);
                     tuketim.setKalorisi(gelenkalori.Kalorisi);
                     tuketim.setTarih(strDate);
                     tuketim.setOgun(ogun);
                     tuketim.setKaloriYemekAdi(gelenkalori.YemekAdi);
                     tuketimDao.insertTuketimler(tuketim);
-
+                    autotext.setText("");
                     gunluk_kalori+=gelenkalori.Kalorisi;
                     txttoplam.setText(gunluk_kalori+"");
                     Toast t = Toast.makeText(getActivity(), "Başarılı!", Toast.LENGTH_SHORT);
@@ -195,10 +243,7 @@ public class hosgeldinEkrani extends Fragment {
             Toast t = Toast.makeText(getActivity(), "Lütfen yemek seçiniz!", Toast.LENGTH_SHORT);
             t.show();
         }
-        if (ogun==0) {
-            Toast t = Toast.makeText(getActivity(), "Lütfen yemek vakiti seçiniz!", Toast.LENGTH_SHORT);
-            t.show();
-        }
+
         else{
             durum=true;
         }

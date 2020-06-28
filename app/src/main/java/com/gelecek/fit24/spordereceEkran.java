@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 /**
@@ -65,9 +66,19 @@ public class spordereceEkran extends Fragment {
                 if (selectedId==R.id.radioButtoncok){
                     sporDerece=3;
                 }
-                User user= userDao.getSonUser();
-                updateClicked(user);
-                navController.navigate(R.id.action_spordereceEkran_to_hedefEkran);
+
+                if(sporDerece==0)
+                {
+                    Toast t = Toast.makeText(getActivity(), "Lütfen aktif olma derecenizi seçiniz.", Toast.LENGTH_SHORT);
+                    t.show();
+                }
+                if(sporDerece!=0){
+
+                    User user= userDao.getSonUser();
+                    updateClicked(user);
+                    navController.navigate(R.id.action_spordereceEkran_to_hedefEkran);
+                }
+
             }
         });
 
